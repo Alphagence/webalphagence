@@ -160,4 +160,43 @@
     height: 3px;
     background-color: theme('colors.alphagence.gold');
   }
+  
+  /* Loader style for Spline fallback */
+  .loader {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #B08D57;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    animation: loader-rotation 1s linear infinite;
+  }
+
+  @keyframes loader-rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Spotlight animation */
+  @keyframes spotlight {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .animate-spotlight {
+    animation: spotlight 5s infinite ease-in-out;
+  }
 }
