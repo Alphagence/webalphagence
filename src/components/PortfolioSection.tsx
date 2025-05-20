@@ -39,22 +39,22 @@ const PortfolioItem = ({ title, description, imageUrl, index }: PortfolioItemPro
   return (
     <div 
       ref={itemRef}
-      className={`animate-on-scroll bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1`}
+      className={`animate-on-scroll bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300`}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="h-52 overflow-hidden">
+      <div className="h-48 overflow-hidden">
         <img 
           src={imageUrl} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
         />
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-alphagence-black">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold mb-1 text-alphagence-black">{title}</h3>
+        <p className="text-gray-600 text-sm mb-3">{description}</p>
         <Button
           variant="ghost"
-          className="text-alphagence-gold hover:text-alphagence-gold/90 hover:bg-alphagence-gold/10 p-0"
+          className="text-alphagence-gold hover:text-alphagence-gold/90 hover:bg-alphagence-gold/10 p-0 text-sm"
         >
           Voir le projet
           <svg
@@ -145,18 +145,18 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section id="portfolio" ref={sectionRef} className="py-20 bg-white">
+    <section id="portfolio" ref={sectionRef} className="py-16 bg-alphagence-black text-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="animate-on-scroll section-heading inline-block mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
             Nos Dernières Réalisations
           </h2>
-          <p className="animate-on-scroll text-lg text-gray-600 max-w-3xl mx-auto mt-8">
+          <p className="animate-on-scroll text-lg text-white/80 max-w-3xl mx-auto mt-6">
             Découvrez comment nous transformons les idées de nos clients en expériences numériques performantes et esthétiques.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {portfolioItems.map((item, index) => (
             <PortfolioItem
               key={index}
@@ -168,8 +168,8 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <Button className="bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-lg py-6 px-8">
+        <div className="text-center mt-12">
+          <Button className="bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-base py-5 px-6">
             Voir tous nos projets
           </Button>
         </div>

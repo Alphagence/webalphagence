@@ -10,8 +10,8 @@ interface TestimonialProps {
 
 const Testimonial = ({ quote, author, position, company }: TestimonialProps) => {
   return (
-    <div className="bg-white rounded-xl p-8 shadow-lg relative">
-      <div className="absolute -top-5 left-8 text-6xl text-alphagence-gold opacity-50">"</div>
+    <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 relative">
+      <div className="absolute -top-5 left-8 text-6xl text-alphagence-gold opacity-40">"</div>
       <p className="text-lg italic text-gray-700 mb-6 relative z-10">{quote}</p>
       <div className="flex items-center">
         <div className="w-12 h-12 bg-alphagence-gold/20 rounded-full flex items-center justify-center text-alphagence-gold font-bold text-xl">
@@ -29,6 +29,7 @@ const Testimonial = ({ quote, author, position, company }: TestimonialProps) => 
 const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -56,6 +57,49 @@ const TestimonialsSection = () => {
         observer.unobserve(sectionRef.current);
       }
     };
+  }, []);
+
+  // Apply drag effect for testimonial slider
+  useEffect(() => {
+    if (sliderRef.current) {
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      const slider = sliderRef.current;
+
+      const onMouseDown = (e: MouseEvent) => {
+        isDragging = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+        slider.style.cursor = 'grabbing';
+      };
+
+      const onMouseMove = (e: MouseEvent) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      };
+
+      const onMouseUp = () => {
+        isDragging = false;
+        slider.style.cursor = 'grab';
+      };
+
+      slider.addEventListener('mousedown', onMouseDown);
+      slider.addEventListener('mousemove', onMouseMove);
+      slider.addEventListener('mouseup', onMouseUp);
+      slider.addEventListener('mouseleave', onMouseUp);
+
+      return () => {
+        slider.removeEventListener('mousedown', onMouseDown);
+        slider.removeEventListener('mousemove', onMouseMove);
+        slider.removeEventListener('mouseup', onMouseUp);
+        slider.removeEventListener('mouseleave', onMouseUp);
+      };
+    }
   }, []);
 
   const testimonials = [
@@ -98,7 +142,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gray-50">
+    <section ref={sectionRef} className="py-20 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="animate-on-scroll section-heading inline-block mx-auto">
@@ -109,29 +153,27 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="animate-on-scroll relative h-[280px] md:h-[220px]">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index}
-                className={`absolute w-full transition-all duration-500 ease-in-out ${
-                  index === activeIndex 
-                    ? 'opacity-100 translate-x-0 z-20' 
-                    : index === (activeIndex - 1 + testimonials.length) % testimonials.length
-                      ? 'opacity-0 -translate-x-full z-10' 
-                      : 'opacity-0 translate-x-full z-10'
-                }`}
-              >
-                <Testimonial
-                  quote={testimonial.quote}
-                  author={testimonial.author}
-                  position={testimonial.position}
-                  company={testimonial.company}
-                />
-              </div>
-            ))}
+        <div className="max-w-4xl mx-auto relative">
+          {/* Slider with drag effect */}
+          <div ref={sliderRef} className="animate-on-scroll overflow-hidden cursor-grab" style={{ touchAction: 'pan-y' }}>
+            <div 
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="min-w-full px-4">
+                  <Testimonial
+                    quote={testimonial.quote}
+                    author={testimonial.author}
+                    position={testimonial.position}
+                    company={testimonial.company}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
+          {/* Animated dots */}
           <div className="flex justify-center mt-10">
             {testimonials.map((_, index) => (
               <button
@@ -150,15 +192,15 @@ const TestimonialsSection = () => {
 
         <div className="animate-on-scroll mt-16 flex flex-wrap justify-center gap-12">
           <div className="text-center">
-            <div className="text-4xl font-bold text-alphagence-gold mb-2">100+</div>
+            <div className="text-4xl font-bold text-alphagence-gold mb-2 counter" data-count="100">100+</div>
             <div className="text-gray-600">Projets Livrés</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-alphagence-gold mb-2">95%</div>
+            <div className="text-4xl font-bold text-alphagence-gold mb-2 counter" data-count="95">95%</div>
             <div className="text-gray-600">Clients Satisfaits</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-alphagence-gold mb-2">+40%</div>
+            <div className="text-4xl font-bold text-alphagence-gold mb-2 counter" data-count="40">+40%</div>
             <div className="text-gray-600">Conversion Moyenne</div>
           </div>
           <div className="text-center">

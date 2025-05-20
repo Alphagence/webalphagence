@@ -11,12 +11,12 @@ import ComparisonSection from "@/components/ComparisonSection";
 import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
-import { initScrollAnimation } from "@/utils/scrollAnimation";
+import { initAllAnimations } from "@/utils/scrollAnimation";
 
 const Index = () => {
   useEffect(() => {
-    // Initialize scroll animations
-    initScrollAnimation();
+    // Initialize all scroll animations
+    initAllAnimations();
     
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -28,12 +28,15 @@ const Index = () => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.getBoundingClientRect().top + window.scrollY - 100,
+            top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
             behavior: 'smooth'
           });
         }
       });
     });
+    
+    // Add page reveal animation
+    document.body.classList.add('page-loaded');
     
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
