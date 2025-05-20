@@ -135,7 +135,7 @@ const PortfolioSection = () => {
     {
       title: "Site Événementiel",
       description: "Plateforme pour la gestion et promotion d'événements culturels",
-      imageUrl: "https://images.unsplash.com/photo-1540317580384-e5d43867caa6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGV2ZW50fGVufDB8fDB8fHww"
+      imageUrl: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZXZlbnR8ZW58MHx8MHx8fDA%3D"
     },
     {
       title: "Portail Éducatif",
