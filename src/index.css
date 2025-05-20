@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -195,5 +196,37 @@
 
   .animate-spotlight {
     animation: spotlight 2s ease-in-out infinite alternate;
+  }
+  
+  /* Scroll expansion animations */
+  @keyframes expandIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .expand-in {
+    animation: expandIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes textFloat {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .text-float {
+    animation: textFloat 3s ease-in-out infinite;
   }
 }
