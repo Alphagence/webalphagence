@@ -7,7 +7,6 @@ import {
   useState,
   ReactNode,
   TouchEvent,
-  WheelEvent,
 } from 'react';
 import { motion } from 'framer-motion';
 
@@ -51,6 +50,7 @@ const ScrollExpandMedia = ({
   }, [mediaType]);
 
   useEffect(() => {
+    // Critical: Using direct function references for event listeners
     const handleWheel = (e: WheelEvent) => {
       if (mediaFullyExpanded && e.deltaY < 0 && window.scrollY <= 5) {
         setMediaFullyExpanded(false);
@@ -89,7 +89,7 @@ const ScrollExpandMedia = ({
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
         // Increase sensitivity for mobile, especially when scrolling back
-        const scrollFactor = deltaY < 0 ? 0.008 : 0.005; // Higher sensitivity for scrolling back
+        const scrollFactor = deltaY < 0 ? 0.008 : 0.005; 
         const scrollDelta = deltaY * scrollFactor;
         const newProgress = Math.min(
           Math.max(scrollProgress + scrollDelta, 0),
@@ -108,52 +108,54 @@ const ScrollExpandMedia = ({
       }
     };
 
-    const handleTouchEnd = (): void => {
+    const handleTouchEnd = () => {
       setTouchStartY(0);
     };
 
-    const handleScroll = (): void => {
+    const handleScroll = () => {
       if (!mediaFullyExpanded) {
         window.scrollTo(0, 0);
       }
     };
 
-    window.addEventListener('wheel', handleWheel as unknown as EventListener, {
-      passive: false,
-    });
-    window.addEventListener('scroll', handleScroll as EventListener);
-    window.addEventListener(
-      'touchstart',
-      handleTouchStart as unknown as EventListener,
-      { passive: false }
-    );
-    window.addEventListener(
-      'touchmove',
-      handleTouchMove as unknown as EventListener,
-      { passive: false }
-    );
-    window.addEventListener('touchend', handleTouchEnd as EventListener);
+    const resetSection = () => {
+      setScrollProgress(0);
+      setShowContent(false);
+      setMediaFullyExpanded(false);
+    };
 
+    // Properly attach wheel event to the section ref element
+    const sectionElement = sectionRef.current;
+    if (sectionElement) {
+      sectionElement.addEventListener('wheel', handleWheel as any, { passive: false });
+    } else {
+      // Fallback to window if section ref isn't available
+      window.addEventListener('wheel', handleWheel as any, { passive: false });
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchstart', handleTouchStart as any, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove as any, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd as any);
+    window.addEventListener('resetSection', resetSection);
+
+    // Cleanup function
     return () => {
-      window.removeEventListener(
-        'wheel',
-        handleWheel as unknown as EventListener
-      );
-      window.removeEventListener('scroll', handleScroll as EventListener);
-      window.removeEventListener(
-        'touchstart',
-        handleTouchStart as unknown as EventListener
-      );
-      window.removeEventListener(
-        'touchmove',
-        handleTouchMove as unknown as EventListener
-      );
-      window.removeEventListener('touchend', handleTouchEnd as EventListener);
+      if (sectionElement) {
+        sectionElement.removeEventListener('wheel', handleWheel as any);
+      } else {
+        window.removeEventListener('wheel', handleWheel as any);
+      }
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchstart', handleTouchStart as any);
+      window.removeEventListener('touchmove', handleTouchMove as any);
+      window.removeEventListener('touchend', handleTouchEnd as any);
+      window.removeEventListener('resetSection', resetSection);
     };
   }, [scrollProgress, mediaFullyExpanded, touchStartY]);
 
   useEffect(() => {
-    const checkIfMobile = (): void => {
+    const checkIfMobile = () => {
       setIsMobileState(window.innerWidth < 768);
     };
 

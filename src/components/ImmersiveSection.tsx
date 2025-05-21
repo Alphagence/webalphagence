@@ -12,9 +12,25 @@ const ImmersiveSection = () => {
   };
 
   useEffect(() => {
+    // Force reset scroll position to top
     window.scrollTo(0, 0);
+    
+    // Dispatch a reset event to reset the scroll expansion state
     const resetEvent = new Event('resetSection');
     window.dispatchEvent(resetEvent);
+
+    // Force page to be at top initially
+    const handleInitialScroll = () => {
+      if (window.scrollY < 10) return;
+      window.scrollTo(0, 0);
+    };
+
+    // Add an immediate scroll handler that will fire once
+    window.addEventListener('scroll', handleInitialScroll, { once: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleInitialScroll);
+    };
   }, []);
 
   return (
