@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef, TouchEvent } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 interface ScrollExpansionOptions {
   onFullyExpanded?: () => void;
@@ -15,11 +15,11 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   // Reset states when component props change
-  const resetStates = () => {
+  const resetStates = useCallback(() => {
     setScrollProgress(0);
     setShowContent(false);
     setMediaFullyExpanded(false);
-  };
+  }, []);
 
   // Handle wheel events
   useEffect(() => {
@@ -29,7 +29,7 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
         e.preventDefault();
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
-        const scrollDelta = e.deltaY * 0.0009;
+        const scrollDelta = e.deltaY * 0.001; // Slightly smoother scrolling
         const newProgress = Math.min(
           Math.max(scrollProgress + scrollDelta, 0),
           1

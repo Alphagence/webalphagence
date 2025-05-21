@@ -1,7 +1,7 @@
 
 'use client';
 
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollExpansion } from '@/hooks/useScrollExpansion';
 import Background from './scroll-expansion/Background';
@@ -41,10 +41,6 @@ const ScrollExpandMedia = ({
     resetStates
   } = useScrollExpansion();
 
-  useEffect(() => {
-    resetStates();
-  }, [mediaType, resetStates]);
-
   const mediaWidth = 300 + scrollProgress * (isMobileState ? 650 : 1250);
   const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
   const textTranslateX = scrollProgress * (isMobileState ? 180 : 150);
@@ -80,14 +76,15 @@ const ScrollExpandMedia = ({
                 scrollToExpand={scrollToExpand}
                 textTranslateX={textTranslateX}
                 textBlend={textBlend}
+                scrollProgress={scrollProgress}
               />
             </div>
 
             <motion.section
               className='flex flex-col w-full px-8 py-10 md:px-16 lg:py-20'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: showContent ? 1 : 0 }}
-              transition={{ duration: 0.7 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: showContent ? 1 : 0, y: showContent ? 0 : 30 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {children}
             </motion.section>
