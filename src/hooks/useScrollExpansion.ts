@@ -29,7 +29,7 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
         e.preventDefault();
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
-        const scrollDelta = e.deltaY * 0.0009; // Match the example code sensitivity
+        const scrollDelta = e.deltaY * 0.0009;
         const newProgress = Math.min(
           Math.max(scrollProgress + scrollDelta, 0),
           1
@@ -61,7 +61,6 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
         e.preventDefault();
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
-        // Increase sensitivity for mobile, especially when scrolling back
         const scrollFactor = deltaY < 0 ? 0.008 : 0.005; 
         const scrollDelta = deltaY * scrollFactor;
         const newProgress = Math.min(
@@ -98,32 +97,32 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
       setMediaFullyExpanded(false);
     };
 
-    // Properly attach wheel event to the section ref element
+    // Use the section ref element if available
     const sectionElement = sectionRef.current;
+    
     if (sectionElement) {
-      sectionElement.addEventListener('wheel', handleWheel as any, { passive: false });
+      sectionElement.addEventListener('wheel', handleWheel, { passive: false });
     } else {
-      // Fallback to window if section ref isn't available
-      window.addEventListener('wheel', handleWheel as any, { passive: false });
+      window.addEventListener('wheel', handleWheel, { passive: false });
     }
     
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('touchstart', handleTouchStart as any, { passive: false });
-    window.addEventListener('touchmove', handleTouchMove as any, { passive: false });
-    window.addEventListener('touchend', handleTouchEnd as any);
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd);
     window.addEventListener('resetSection', resetSection);
 
     // Cleanup function
     return () => {
       if (sectionElement) {
-        sectionElement.removeEventListener('wheel', handleWheel as any);
+        sectionElement.removeEventListener('wheel', handleWheel);
       } else {
-        window.removeEventListener('wheel', handleWheel as any);
+        window.removeEventListener('wheel', handleWheel);
       }
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('touchstart', handleTouchStart as any);
-      window.removeEventListener('touchmove', handleTouchMove as any);
-      window.removeEventListener('touchend', handleTouchEnd as any);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('resetSection', resetSection);
     };
   }, [scrollProgress, mediaFullyExpanded, touchStartY, options]);
