@@ -20,22 +20,29 @@ const ImmersiveSection = () => {
     const resetEvent = new Event('resetSection');
     window.dispatchEvent(resetEvent);
 
-    // Force page to be at top initially
-    const handleInitialScroll = () => {
-      if (window.scrollY < 10) return;
-      window.scrollTo(0, 0);
+    // Force page to be at top initially and prevent any scrolling
+    const preventScroll = (e: Event) => {
+      if (window.scrollY !== 0) {
+        window.scrollTo(0, 0);
+      }
     };
 
-    // Add an immediate scroll handler that will fire once
-    window.addEventListener('scroll', handleInitialScroll, { once: true });
+    // Add an immediate scroll handler with high priority
+    window.addEventListener('scroll', preventScroll, { capture: true });
+
+    // Remove the handler after a short delay
+    const timeout = setTimeout(() => {
+      window.removeEventListener('scroll', preventScroll, { capture: true });
+    }, 1000);
 
     return () => {
-      window.removeEventListener('scroll', handleInitialScroll);
+      clearTimeout(timeout);
+      window.removeEventListener('scroll', preventScroll, { capture: true });
     };
   }, []);
 
   return (
-    <div className="min-h-screen" id="immersive-section">
+    <div className="min-h-screen bg-alphagence-black" id="immersive-section">
       <ScrollExpandMedia
         mediaType="video"
         mediaSrc={mediaContent.src}

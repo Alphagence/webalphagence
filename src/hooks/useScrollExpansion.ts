@@ -29,7 +29,7 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
         e.preventDefault();
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
-        const scrollDelta = e.deltaY * 0.0009;
+        const scrollDelta = e.deltaY * 0.001; // Adjusted sensitivity
         const newProgress = Math.min(
           Math.max(scrollProgress + scrollDelta, 0),
           1
@@ -61,7 +61,7 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
         e.preventDefault();
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
-        const scrollFactor = deltaY < 0 ? 0.008 : 0.005; 
+        const scrollFactor = deltaY < 0 ? 0.01 : 0.006; // Increased sensitivity
         const scrollDelta = deltaY * scrollFactor;
         const newProgress = Math.min(
           Math.max(scrollProgress + scrollDelta, 0),
@@ -97,28 +97,23 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
       setMediaFullyExpanded(false);
     };
 
-    // Use the section ref element if available
+    // Attach events to document instead of window for better capture
     const sectionElement = sectionRef.current;
+    const targetElement = sectionElement || document;
     
-    if (sectionElement) {
-      sectionElement.addEventListener('wheel', handleWheel, { passive: false });
-    } else {
-      window.addEventListener('wheel', handleWheel, { passive: false });
-    }
-    
+    targetElement.addEventListener('wheel', handleWheel, { passive: false });
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('touchstart', handleTouchStart, { passive: false });
     window.addEventListener('touchmove', handleTouchMove, { passive: false });
     window.addEventListener('touchend', handleTouchEnd);
     window.addEventListener('resetSection', resetSection);
 
+    // Ensure page is at top
+    window.scrollTo(0, 0);
+
     // Cleanup function
     return () => {
-      if (sectionElement) {
-        sectionElement.removeEventListener('wheel', handleWheel);
-      } else {
-        window.removeEventListener('wheel', handleWheel);
-      }
+      targetElement.removeEventListener('wheel', handleWheel);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
