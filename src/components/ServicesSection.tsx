@@ -38,14 +38,14 @@ const ServiceCard = ({ icon, title, description, index }: ServiceCardProps) => {
   return (
     <div 
       ref={cardRef}
-      className="animate-on-scroll bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-alphagence-gold/20"
+      className="animate-on-scroll bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-800 hover:border-alphagence-gold/20"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       <div className="w-16 h-16 bg-alphagence-gold/10 rounded-full flex items-center justify-center mb-6">
         <div className="text-3xl text-alphagence-gold">{icon}</div>
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-alphagence-black">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
+      <p className="text-gray-300">{description}</p>
     </div>
   );
 };
@@ -116,13 +116,13 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 bg-white">
+    <section id="services" ref={sectionRef} className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="animate-on-scroll section-heading inline-block mx-auto">
+          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
             Pourquoi Avoir Un Site Web?
           </h2>
-          <p className="animate-on-scroll text-lg text-gray-600 max-w-3xl mx-auto mt-8">
+          <p className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto mt-8">
             À l'ère du numérique, un site web professionnel est essentiel pour développer votre activité et renforcer votre crédibilité.
           </p>
         </div>

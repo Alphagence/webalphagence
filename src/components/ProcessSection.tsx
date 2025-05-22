@@ -38,7 +38,7 @@ const ProcessStep = ({ number, title, description, isLast = false }: ProcessStep
   return (
     <div ref={stepRef} className="animate-on-scroll relative flex items-start group">
       <div className="flex flex-col items-center">
-        <div className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-alphagence-gold bg-white text-alphagence-gold font-bold text-xl z-10 group-hover:bg-alphagence-gold group-hover:text-white transition-colors duration-300">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-alphagence-gold bg-black text-alphagence-gold font-bold text-xl z-10 group-hover:bg-alphagence-gold group-hover:text-black transition-colors duration-300">
           {number}
         </div>
         {!isLast && (
@@ -46,8 +46,8 @@ const ProcessStep = ({ number, title, description, isLast = false }: ProcessStep
         )}
       </div>
       <div className="ml-6 pb-12">
-        <h3 className="text-xl font-semibold text-alphagence-black mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+        <p className="text-gray-300">{description}</p>
       </div>
     </div>
   );
@@ -109,13 +109,13 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" ref={sectionRef} className="py-20 bg-gray-50">
+    <section id="process" ref={sectionRef} className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="animate-on-scroll section-heading inline-block mx-auto">
+          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
             Comment Ça Marche?
           </h2>
-          <p className="animate-on-scroll text-lg text-gray-600 max-w-3xl mx-auto mt-8">
+          <p className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto mt-8">
             Notre processus simple et efficace en 4 étapes pour créer votre site web professionnel.
           </p>
         </div>

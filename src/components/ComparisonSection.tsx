@@ -39,12 +39,12 @@ const ComparisonItem = ({ title, traditional, alphagence, index }: ComparisonIte
     <div 
       ref={itemRef}
       className={`animate-on-scroll grid grid-cols-3 py-6 ${
-        index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+        index % 2 === 0 ? 'bg-black' : 'bg-gray-900'
       }`}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="col-span-1 px-6 font-semibold">{title}</div>
-      <div className="col-span-1 px-6 border-x border-gray-200">{traditional}</div>
+      <div className="col-span-1 px-6 font-semibold text-white">{title}</div>
+      <div className="col-span-1 px-6 border-x border-gray-700 text-gray-300">{traditional}</div>
       <div className="col-span-1 px-6 text-alphagence-gold font-medium">{alphagence}</div>
     </div>
   );
@@ -121,13 +121,13 @@ const ComparisonSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gray-50">
+    <section ref={sectionRef} className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="animate-on-scroll section-heading inline-block mx-auto">
+          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
             Quelles sont les différences?
           </h2>
-          <p className="animate-on-scroll text-lg text-gray-600 max-w-3xl mx-auto mt-8">
+          <p className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto mt-8">
             Découvrez ce qui distingue Alphagence des agences web traditionnelles
           </p>
         </div>

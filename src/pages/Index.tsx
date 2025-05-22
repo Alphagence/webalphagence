@@ -46,17 +46,19 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
       <ImmersiveHeroSection />
-      <PortfolioSection />
-      <TestimonialsSection />
-      <ServicesSection />
-      <ProcessSection />
-      <PricingSection />
-      <ComparisonSection />
-      <FaqSection />
-      <CtaSection />
+      <div className="bg-black">
+        <PortfolioSection />
+        <TestimonialsSection />
+        <ServicesSection />
+        <ProcessSection />
+        <PricingSection />
+        <ComparisonSection />
+        <FaqSection />
+        <CtaSection />
+      </div>
       <Footer />
     </div>
   );
