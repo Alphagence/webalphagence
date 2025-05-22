@@ -29,7 +29,7 @@ export const useScrollExpansion = (options?: ScrollExpansionOptions) => {
         e.preventDefault();
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
-        const scrollDelta = e.deltaY * 0.001; // Slightly smoother scrolling
+        const scrollDelta = e.deltaY * 0.0009; // Match the example code sensitivity
         const newProgress = Math.min(
           Math.max(scrollProgress + scrollDelta, 0),
           1
