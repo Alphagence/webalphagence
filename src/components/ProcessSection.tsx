@@ -1,137 +1,97 @@
 
-import { useEffect, useRef } from 'react';
-
-interface ProcessStepProps {
-  number: number;
-  title: string;
-  description: string;
-  isLast?: boolean;
-}
-
-const ProcessStep = ({ number, title, description, isLast = false }: ProcessStepProps) => {
-  const stepRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (stepRef.current) {
-      observer.observe(stepRef.current);
-    }
-
-    return () => {
-      if (stepRef.current) {
-        observer.unobserve(stepRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <div ref={stepRef} className="animate-on-scroll relative flex items-start group">
-      <div className="flex flex-col items-center">
-        <div className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-alphagence-gold bg-black text-alphagence-gold font-bold text-xl z-10 group-hover:bg-alphagence-gold group-hover:text-black transition-colors duration-300">
-          {number}
-        </div>
-        {!isLast && (
-          <div className="w-px h-full bg-alphagence-gold/30 mt-4"></div>
-        )}
-      </div>
-      <div className="ml-6 pb-12">
-        <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-        <p className="text-gray-300">{description}</p>
-      </div>
-    </div>
-  );
-};
+import { Timeline } from "@/components/ui/timeline";
 
 const ProcessSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const animatedElements = entry.target.querySelectorAll('.animate-on-scroll');
-            animatedElements.forEach((el, index) => {
-              setTimeout(() => {
-                el.classList.add('animated');
-              }, index * 200);
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   const processSteps = [
     {
-      number: 1,
-      title: "Consultation & Analyse",
-      description: "Nous commençons par comprendre votre activité, vos objectifs et vos besoins spécifiques. Cette étape est cruciale pour concevoir une solution digitale parfaitement adaptée à votre entreprise."
+      title: "Étape 1",
+      content: (
+        <div className="mb-8">
+          <h3 className="text-2xl font-semibold text-white mb-4">Consultation & Analyse</h3>
+          <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            Nous commençons par comprendre votre activité, vos objectifs et vos besoins spécifiques. Cette étape est cruciale pour concevoir une solution digitale parfaitement adaptée à votre entreprise.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-alphagence-darkGray p-4 rounded-lg">
+              <h4 className="text-alphagence-gold font-semibold mb-2">✓ Audit complet</h4>
+              <p className="text-gray-300 text-sm">Analyse de votre présence digitale actuelle</p>
+            </div>
+            <div className="bg-alphagence-darkGray p-4 rounded-lg">
+              <h4 className="text-alphagence-gold font-semibold mb-2">✓ Définition des objectifs</h4>
+              <p className="text-gray-300 text-sm">Identification de vos besoins et priorités</p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      number: 2,
-      title: "Conception & Design",
-      description: "Notre équipe créative élabore un design sur mesure qui reflète l'identité de votre marque. Nous vous présentons des maquettes pour validation avant de passer à l'étape suivante."
+      title: "Étape 2",
+      content: (
+        <div className="mb-8">
+          <h3 className="text-2xl font-semibold text-white mb-4">Conception & Design</h3>
+          <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            Notre équipe créative élabore un design sur mesure qui reflète l'identité de votre marque. Nous vous présentons des maquettes pour validation avant de passer à l'étape suivante.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-alphagence-darkGray p-4 rounded-lg">
+              <h4 className="text-alphagence-gold font-semibold mb-2">✓ Maquettes personnalisées</h4>
+              <p className="text-gray-300 text-sm">Designs uniques adaptés à votre marque</p>
+            </div>
+            <div className="bg-alphagence-darkGray p-4 rounded-lg">
+              <h4 className="text-alphagence-gold font-semibold mb-2">✓ UX/UI optimisée</h4>
+              <p className="text-gray-300 text-sm">Interface intuitive et expérience utilisateur fluide</p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      number: 3,
-      title: "Développement & Intégration",
-      description: "Nos développeurs transforment le design approuvé en un site web fonctionnel, optimisé pour les performances et compatible avec tous les appareils."
+      title: "Étape 3",
+      content: (
+        <div className="mb-8">
+          <h3 className="text-2xl font-semibold text-white mb-4">Développement & Intégration</h3>
+          <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            Nos développeurs transforment le design approuvé en un site web fonctionnel, optimisé pour les performances et compatible avec tous les appareils.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-alphagence-darkGray p-4 rounded-lg">
+              <h4 className="text-alphagence-gold font-semibold mb-2">✓ Code optimisé</h4>
+              <p className="text-gray-300 text-sm">Développement moderne et performant</p>
+            </div>
+            <div className="bg-alphagence-darkGray p-4 rounded-lg">
+              <h4 className="text-alphagence-gold font-semibold mb-2">✓ Responsive design</h4>
+              <p className="text-gray-300 text-sm">Compatible tous appareils et navigateurs</p>
+            </div>
+          </div>
+        </div>
+      ),
     },
     {
-      number: 4,
-      title: "Tests & Lancement",
-      description: "Après une phase rigoureuse de tests pour garantir la qualité, nous procédons au lancement de votre site. Notre équipe reste disponible pour vous accompagner et optimiser votre présence en ligne."
+      title: "Étape 4",
+      content: (
+        <div className="mb-8">
+          <h3 className="text-2xl font-semibold text-white mb-4">Tests & Lancement</h3>
+          <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            Après une phase rigoureuse de tests pour garantir la qualité, nous procédons au lancement de votre site. Notre équipe reste disponible pour vous accompagner et optimiser votre présence en ligne.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-alphagence-darkGray p-4 rounded-lg">
+              <h4 className="text-alphagence-gold font-semibold mb-2">✓ Tests complets</h4>
+              <p className="text-gray-300 text-sm">Vérification de tous les aspects fonctionnels</p>
+            </div>
+            <div className="bg-alphagence-darkGray p-4 rounded-lg">
+              <h4 className="text-alphagence-gold font-semibold mb-2">✓ Support continu</h4>
+              <p className="text-gray-300 text-sm">Accompagnement post-lancement et maintenance</p>
+            </div>
+          </div>
+        </div>
+      ),
     }
   ];
 
   return (
-    <section id="process" ref={sectionRef} className="py-20 bg-black">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
-            Comment Ça Marche?
-          </h2>
-          <p className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto mt-8">
-            Notre processus simple et efficace en 4 étapes pour créer votre site web professionnel.
-          </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto mt-16">
-          {processSteps.map((step, index) => (
-            <ProcessStep
-              key={index}
-              number={step.number}
-              title={step.title}
-              description={step.description}
-              isLast={index === processSteps.length - 1}
-            />
-          ))}
-        </div>
-      </div>
+    <section id="process" className="bg-black">
+      <Timeline data={processSteps} />
     </section>
   );
 };
