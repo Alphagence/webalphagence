@@ -1,7 +1,6 @@
 
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
@@ -134,7 +133,6 @@ export function Pricing({
                       minimumFractionDigits: 0,
                       maximumFractionDigits: 0,
                     }}
-                    formatter={(value) => `${value} CHF`}
                     transformTiming={{
                       duration: 500,
                       easing: "ease-out",
@@ -144,7 +142,7 @@ export function Pricing({
                   />
                 </span>
                 <span className="text-sm font-semibold leading-6 tracking-wide text-gray-400">
-                  / {plan.period}
+                  CHF / {plan.period}
                 </span>
               </div>
 
