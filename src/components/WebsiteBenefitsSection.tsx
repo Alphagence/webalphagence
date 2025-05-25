@@ -59,7 +59,7 @@ const WebsiteBenefitsSection = () => {
       title: "Portée Mondiale",
       meta: "Sans limites",
       description: "Touchez des clients partout dans le monde et élargissez votre marché au-delà des frontières géographiques.",
-      icon: <Globe className="w-4 h-4 text-blue-500" />,
+      icon: <Globe className="w-4 h-4 text-gray-700" />,
       status: "Global",
       tags: ["International", "Expansion"],
       cta: "Explorer →"
@@ -68,7 +68,7 @@ const WebsiteBenefitsSection = () => {
       title: "Croissance Business",
       meta: "+300% en moyenne",
       description: "Augmentez significativement vos ventes grâce à une présence digitale optimisée et professionnelle.",
-      icon: <TrendingUp className="w-4 h-4 text-green-500" />,
+      icon: <TrendingUp className="w-4 h-4 text-green-600" />,
       status: "ROI Prouvé",
       tags: ["Ventes", "Conversion"],
       colSpan: 2,
@@ -78,7 +78,7 @@ const WebsiteBenefitsSection = () => {
       title: "Crédibilité Professionnelle",
       meta: "85% des clients",
       description: "Renforcez la confiance de vos clients avec un site web professionnel qui reflète votre expertise.",
-      icon: <CheckCircle className="w-4 h-4 text-purple-500" />,
+      icon: <CheckCircle className="w-4 h-4 text-purple-600" />,
       status: "Confiance",
       tags: ["Réputation", "Trust"],
       cta: "Voir plus →"
@@ -87,7 +87,7 @@ const WebsiteBenefitsSection = () => {
       title: "Marketing Automatisé",
       meta: "24h/24",
       description: "Votre site travaille pour vous en permanence, générant des leads et convertissant les visiteurs.",
-      icon: <Star className="w-4 h-4 text-yellow-500" />,
+      icon: <Star className="w-4 h-4 text-yellow-600" />,
       status: "Automation",
       tags: ["Leads", "Marketing"],
       cta: "Optimiser →"
@@ -96,7 +96,7 @@ const WebsiteBenefitsSection = () => {
       title: "Contenu Multimédia",
       meta: "Engagement +200%",
       description: "Présentez vos produits avec des vidéos, images et animations pour captiver votre audience.",
-      icon: <Video className="w-4 h-4 text-red-500" />,
+      icon: <Video className="w-4 h-4 text-red-600" />,
       status: "Interactif",
       tags: ["Média", "Engagement"],
       cta: "Créer →"
@@ -114,29 +114,31 @@ const WebsiteBenefitsSection = () => {
   ];
 
   return (
-    <section id="benefits" ref={sectionRef} className="py-20 bg-black">
+    <section id="benefits" ref={sectionRef} className="py-20 bg-gradient-to-b from-yellow-50 to-amber-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
+          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-gray-900">
             Pourquoi Avoir Un Site Web?
           </h2>
-          <p className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto mt-8">
+          <p className="animate-on-scroll text-lg text-gray-700 max-w-3xl mx-auto mt-8">
             Découvrez tous les avantages d'une présence digitale professionnelle pour votre entreprise.
             Un site web n'est plus un luxe, c'est une nécessité dans le monde moderne.
           </p>
         </div>
 
-        <div className="animate-on-scroll">
-          <BentoGrid items={websiteBenefits} />
+        <div className="animate-on-scroll flex justify-center">
+          <div className="max-w-5xl">
+            <BentoGrid items={websiteBenefits} />
+          </div>
         </div>
 
         <div className="animate-on-scroll text-center mt-12">
-          <p className="text-lg mb-6 text-white">Prêt à transformer votre présence digitale?</p>
-          <a 
-            href="#contact" 
+          <p className="text-lg mb-6 text-gray-800">Prêt à transformer votre présence digitale?</p>
+          <button 
+            onClick={() => window.open('https://calendly.com/alphameed/rendez-vous-informations-et-renseignements', '_blank')}
             className="inline-flex items-center px-8 py-3 bg-alphagence-gold text-black font-semibold rounded-lg hover:bg-alphagence-gold/90 transition-colors"
           >
-            Commencer mon projet
+            Réserver un rendez-vous
             <svg 
               className="w-4 h-4 ml-2" 
               fill="none" 
@@ -146,7 +148,7 @@ const WebsiteBenefitsSection = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
-          </a>
+          </button>
         </div>
       </div>
     </section>

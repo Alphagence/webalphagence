@@ -14,8 +14,11 @@ import StatsSection from "@/components/StatsSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import { initAllAnimations } from "@/utils/scrollAnimation";
+import { useCalendly } from "@/hooks/useCalendly";
 
 const Index = () => {
+  const { CalendlyComponent } = useCalendly();
+
   useEffect(() => {
     // Initialize all scroll animations
     initAllAnimations();
@@ -64,6 +67,7 @@ const Index = () => {
         <CtaSection />
       </div>
       <Footer />
+      <CalendlyComponent />
     </div>
   );
 };

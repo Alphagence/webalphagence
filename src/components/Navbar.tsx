@@ -6,15 +6,28 @@ import AlphagenceLogo from "@/assets/logo";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      setIsScrolled(currentScrollY > 50);
+      
+      // Hide navbar when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,6 +44,8 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-black/95 backdrop-blur-sm border-b border-gray-800' : 'bg-transparent'
+    } ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -67,7 +82,7 @@ const Navbar = () => {
               Tarifs
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => window.open('https://calendly.com/alphameed/rendez-vous-informations-et-renseignements', '_blank')}
               className="bg-alphagence-gold text-black px-6 py-2 rounded-lg font-semibold hover:bg-alphagence-gold/90 transition-colors"
             >
               Contact
@@ -114,7 +129,7 @@ const Navbar = () => {
                 Tarifs
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => window.open('https://calendly.com/alphameed/rendez-vous-informations-et-renseignements', '_blank')}
                 className="block w-full text-left px-3 py-2 bg-alphagence-gold text-black rounded-lg font-semibold mt-2"
               >
                 Contact
