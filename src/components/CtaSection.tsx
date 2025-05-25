@@ -199,16 +199,16 @@ const CtaSection = () => {
       />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center">
-          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white mb-8">
             Prêt à transformer votre présence en ligne?
           </h2>
-          <p className="animate-on-scroll text-lg text-gray-300 max-w-2xl mx-auto mt-8 mb-12">
+          <p className="animate-on-scroll text-lg text-gray-300 mb-12">
             Rejoignez les entreprises qui ont choisi Alphagence pour leur transformation digitale. 
             Obtenez un site web 3D qui vous démarque de la concurrence.
           </p>
 
-          <div className="animate-on-scroll flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="animate-on-scroll flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <a 
               href="tel:+41767972683"
               className="inline-flex items-center px-8 py-4 bg-alphagence-gold text-black font-bold rounded-lg hover:bg-alphagence-gold/90 transition-all duration-300 transform hover:scale-105 shadow-lg"
@@ -230,9 +230,22 @@ const CtaSection = () => {
             </a>
           </div>
 
-          <div className="animate-on-scroll mt-8 text-center">
+          <div className="animate-on-scroll mb-8 text-center">
             <p className="text-gray-400 mb-2">📍 Z.I la palaz 3A, 1530 Payerne</p>
-            <p className="text-sm text-gray-500">Réponse garantie sous 24h</p>
+            <p className="text-sm text-gray-500 mb-8">Réponse garantie sous 24h</p>
+          </div>
+
+          {/* Calendly Widget Integration */}
+          <div className="animate-on-scroll bg-gray-900/50 rounded-xl p-6 backdrop-blur-sm border border-gray-700">
+            <h3 className="text-2xl font-bold text-alphagence-gold mb-4">Réservez votre consultation gratuite</h3>
+            <p className="text-gray-300 mb-6">
+              Discutons de votre projet et découvrez comment nous pouvons transformer votre présence digitale.
+            </p>
+            <div 
+              className="calendly-inline-widget bg-white rounded-lg" 
+              data-url="https://calendly.com/alphameed/rendez-vous-informations-et-renseignements?hide_event_type_details=1&hide_gdpr_banner=1" 
+              style={{minWidth: '320px', height: '700px'}}
+            ></div>
           </div>
         </div>
       </div>

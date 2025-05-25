@@ -8,7 +8,9 @@ import {
   CheckCircle,
   Star,
   Video,
-  Zap
+  Zap,
+  Shield,
+  Search
 } from 'lucide-react';
 
 const WebsiteBenefitsSection = () => {
@@ -59,7 +61,7 @@ const WebsiteBenefitsSection = () => {
       title: "Portée Mondiale",
       meta: "Sans limites",
       description: "Touchez des clients partout dans le monde et élargissez votre marché au-delà des frontières géographiques.",
-      icon: <Globe className="w-4 h-4 text-blue-500" />,
+      icon: <Globe className="w-4 h-4 text-gray-600" />,
       status: "Global",
       tags: ["International", "Expansion"],
       cta: "Explorer →"
@@ -110,6 +112,24 @@ const WebsiteBenefitsSection = () => {
       tags: ["IA", "Automatisation", "Efficacité"],
       colSpan: 2,
       cta: "Découvrir l'IA →"
+    },
+    {
+      title: "Sécurité Renforcée",
+      meta: "Protection SSL",
+      description: "Protégez vos données et celles de vos clients avec nos mesures de sécurité avancées et certifications SSL.",
+      icon: <Shield className="w-4 h-4 text-gray-600" />,
+      status: "Sécurisé",
+      tags: ["SSL", "Protection"],
+      cta: "Sécuriser →"
+    },
+    {
+      title: "Référencement SEO",
+      meta: "Première page Google",
+      description: "Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients qualifiés.",
+      icon: <Search className="w-4 h-4 text-gray-600" />,
+      status: "Visibilité",
+      tags: ["SEO", "Google"],
+      cta: "Optimiser →"
     }
   ];
 

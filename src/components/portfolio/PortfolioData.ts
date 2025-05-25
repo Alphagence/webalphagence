@@ -1,4 +1,3 @@
-
 export interface PortfolioItem {
   title: string;
   description: string;
@@ -25,7 +24,7 @@ export const portfolioItemsCol1: PortfolioItem[] = [
   {
     title: "Site Médical",
     description: "Plateforme de téléconsultation pour professionnels de santé",
-    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVkaWNhbCUyMHdlYnNpdGV8ZW58MHx8MHx8fDA%3D"
+    imageUrl: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVkaWNhbCUyMHdlYnNpdGV8ZW58MHx8MHx8fDA%3D"
   },
 ];
 

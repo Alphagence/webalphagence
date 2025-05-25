@@ -111,25 +111,6 @@ const TestimonialsSection = () => {
             </CardsContainer>
           </div>
         </ContainerScroll>
-
-        <div className="mt-16 flex flex-wrap justify-center gap-12">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-alphagence-gold mb-2">100+</div>
-            <div className="text-white/80">Projets Livrés</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-alphagence-gold mb-2">95%</div>
-            <div className="text-white/80">Clients Satisfaits</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-alphagence-gold mb-2">+40%</div>
-            <div className="text-white/80">Conversion Moyenne</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold text-alphagence-gold mb-2">24/7</div>
-            <div className="text-white/80">Support Client</div>
-          </div>
-        </div>
       </div>
     </section>
   );
