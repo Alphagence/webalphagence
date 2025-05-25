@@ -7,7 +7,8 @@ import {
   TrendingUp,
   CheckCircle,
   Star,
-  Video
+  Video,
+  Zap
 } from 'lucide-react';
 
 const WebsiteBenefitsSection = () => {
@@ -99,6 +100,16 @@ const WebsiteBenefitsSection = () => {
       status: "Interactif",
       tags: ["Média", "Engagement"],
       cta: "Créer →"
+    },
+    {
+      title: "Automatisation IA",
+      meta: "-70% temps employé",
+      description: "Intégrez des agents IA pour automatiser les tâches répétitives, réduire les coûts et augmenter l'efficacité de votre équipe.",
+      icon: <Zap className="w-4 h-4 text-alphagence-gold" />,
+      status: "Innovation",
+      tags: ["IA", "Automatisation", "Efficacité"],
+      colSpan: 2,
+      cta: "Découvrir l'IA →"
     }
   ];
 

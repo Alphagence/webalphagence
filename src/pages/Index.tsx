@@ -10,6 +10,7 @@ import ProcessSection from "@/components/ProcessSection";
 import PricingSection from "@/components/PricingSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import FaqSection from "@/components/FaqSection";
+import StatsSection from "@/components/StatsSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import { initAllAnimations } from "@/utils/scrollAnimation";
@@ -58,6 +59,7 @@ const Index = () => {
         <ProcessSection />
         <PricingSection />
         <ComparisonSection />
+        <StatsSection />
         <FaqSection />
         <CtaSection />
       </div>

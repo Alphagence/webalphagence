@@ -47,76 +47,7 @@ const ComparisonSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 max-w-7xl mx-auto">
-          {/* Agence Traditionnelle */}
-          <div className="animate-on-scroll">
-            <PinContainer title="Méthodes obsolètes">
-              <div className="flex flex-col p-6 tracking-tight text-slate-100/70 w-[22rem] h-[28rem] bg-gradient-to-b from-red-900/30 to-red-800/10 backdrop-blur-sm border border-red-500/30 rounded-2xl">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="size-3 rounded-full bg-red-500 animate-pulse" />
-                  <div className="text-xs text-red-300">Agence Traditionnelle</div>
-                </div>
-
-                <div className="text-2xl font-bold text-red-200 mb-6">
-                  Méthodes Archaïques
-                </div>
-                
-                <div className="space-y-4 flex-1">
-                  <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="text-sm font-medium text-red-200">Délais interminables</div>
-                      <div className="text-xs text-slate-400">3-6 mois de développement</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Euro className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="text-sm font-medium text-red-200">Coûts cachés</div>
-                      <div className="text-xs text-slate-400">5 000€ - 20 000€ + maintenance</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Headphones className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="text-sm font-medium text-red-200">Support limité</div>
-                      <div className="text-xs text-slate-400">Heures de bureau uniquement</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Shield className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="text-sm font-medium text-red-200">Technologies obsolètes</div>
-                      <div className="text-xs text-slate-400">Sites lents et peu optimisés</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Users className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="text-sm font-medium text-red-200">Communication difficile</div>
-                      <div className="text-xs text-slate-400">Modifications complexes</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 p-3 bg-red-900/20 rounded-lg border border-red-500/20">
-                  <div className="text-xs text-red-300 text-center">
-                    ❌ Résultat décevant pour un investissement élevé
-                  </div>
-                </div>
-              </div>
-            </PinContainer>
-          </div>
-
-          {/* VS Divider */}
-          <div className="animate-on-scroll">
-            <div className="text-4xl font-bold text-alphagence-gold">VS</div>
-          </div>
-
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 max-w-7xl mx-auto mb-20">
           {/* Alphagence */}
           <div className="animate-on-scroll">
             <PinContainer title="Innovation Alphagence">
@@ -180,9 +111,78 @@ const ComparisonSection = () => {
               </div>
             </PinContainer>
           </div>
+
+          {/* VS Divider */}
+          <div className="animate-on-scroll">
+            <div className="text-4xl font-bold text-alphagence-gold">VS</div>
+          </div>
+
+          {/* Agence Traditionnelle */}
+          <div className="animate-on-scroll">
+            <PinContainer title="Méthodes obsolètes">
+              <div className="flex flex-col p-6 tracking-tight text-slate-100/70 w-[22rem] h-[28rem] bg-gradient-to-b from-red-900/30 to-red-800/10 backdrop-blur-sm border border-red-500/30 rounded-2xl">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="size-3 rounded-full bg-red-500 animate-pulse" />
+                  <div className="text-xs text-red-300">Agence Traditionnelle</div>
+                </div>
+
+                <div className="text-2xl font-bold text-red-200 mb-6">
+                  Méthodes Archaïques
+                </div>
+                
+                <div className="space-y-4 flex-1">
+                  <div className="flex items-start gap-3">
+                    <Clock className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Délais interminables</div>
+                      <div className="text-xs text-slate-400">3-6 mois de développement</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Euro className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Coûts cachés</div>
+                      <div className="text-xs text-slate-400">5 000€ - 20 000€ + maintenance</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Headphones className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Support limité</div>
+                      <div className="text-xs text-slate-400">Heures de bureau uniquement</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Shield className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Technologies obsolètes</div>
+                      <div className="text-xs text-slate-400">Sites lents et peu optimisés</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Users className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Communication difficile</div>
+                      <div className="text-xs text-slate-400">Modifications complexes</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4 p-3 bg-red-900/20 rounded-lg border border-red-500/20">
+                  <div className="text-xs text-red-300 text-center">
+                    ❌ Résultat décevant pour un investissement élevé
+                  </div>
+                </div>
+              </div>
+            </PinContainer>
+          </div>
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center">
           <div className="animate-on-scroll max-w-4xl mx-auto p-8 bg-gradient-to-r from-alphagence-gold/10 to-alphagence-gold/5 rounded-2xl border border-alphagence-gold/20">
             <h3 className="text-3xl font-bold mb-4 text-alphagence-gold">Pourquoi choisir Alphagence?</h3>
             <div className="grid md:grid-cols-3 gap-6 mt-6">

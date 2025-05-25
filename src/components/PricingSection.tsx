@@ -66,11 +66,22 @@ const PricingSection = () => {
 
   return (
     <section id="pricing" className="py-20 bg-black">
-      <Pricing
-        plans={pricingPlans}
-        title="Tarification Transparente"
-        description="Des forfaits adaptés à tous les besoins et budgets, sans frais cachés.\nDécouvrez nos solutions avec des expériences 3D immersives."
-      />
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="section-heading inline-block mx-auto text-white">
+            Tarification Transparente
+          </h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mt-8">
+            Des forfaits adaptés à tous les besoins et budgets, sans frais cachés.
+            <br />
+            Découvrez nos solutions avec des expériences 3D immersives.
+          </p>
+        </div>
+
+        <div className="mt-12">
+          <Pricing plans={pricingPlans} />
+        </div>
+      </div>
       
       <div className="container mx-auto px-4 mt-16">
         <div className="text-center p-8 bg-gray-900 rounded-xl max-w-4xl mx-auto border border-gray-700">
