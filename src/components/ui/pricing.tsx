@@ -30,8 +30,8 @@ interface PricingProps {
 
 export function Pricing({
   plans,
-  title = "Tarification Simple et Transparente",
-  description = "Choisissez le forfait qui vous convient\nTous les forfaits incluent l'accès à notre plateforme, les outils de génération de leads et un support dédié.",
+  title = "Simple, Transparent Pricing",
+  description = "Choose the plan that works for you\nAll plans include access to our platform, lead generation tools, and dedicated support.",
 }: PricingProps) {
   const [isMonthly, setIsMonthly] = useState(true);
   const switchRef = useRef<HTMLButtonElement>(null);
@@ -71,7 +71,7 @@ export function Pricing({
         </p>
       </div>
 
-      <div className="flex justify-center items-center mb-16 gap-4">
+      <div className="flex justify-center items-center mb-10 gap-4">
         <span className="font-semibold text-white">Mensuel</span>
         <label className="relative inline-flex items-center cursor-pointer">
           <Label>
@@ -162,7 +162,6 @@ export function Pricing({
               </ul>
 
               <button
-                onClick={() => window.open('https://calendly.com/alphameed/rendez-vous-informations-et-renseignements', '_blank')}
                 className={cn(
                   "w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105",
                   plan.isPopular

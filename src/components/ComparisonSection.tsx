@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+
+import { useEffect, useRef } from 'react';
 import { PinContainer } from '@/components/ui/3d-pin';
 import { Clock, Euro, Headphones, Shield, Zap, Users } from 'lucide-react';
 
 const ComparisonSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [hoveredCard, setHoveredCard] = useState<'alphagence' | 'traditional' | null>(null);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,136 +47,65 @@ const ComparisonSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 max-w-7xl mx-auto mb-32">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 max-w-7xl mx-auto mb-20">
           {/* Alphagence */}
-          <div 
-            className="animate-on-scroll"
-            onMouseEnter={() => setHoveredCard('alphagence')}
-            onMouseLeave={() => setHoveredCard(null)}
-          >
+          <div className="animate-on-scroll">
             <PinContainer title="Innovation Alphagence">
-              <div className={`flex flex-col p-6 tracking-tight text-slate-100/90 w-[22rem] h-[28rem] rounded-2xl transition-all duration-500 ${
-                hoveredCard === 'alphagence' || hoveredCard === null 
-                  ? 'bg-gradient-to-b from-alphagence-gold/20 to-alphagence-gold/5 backdrop-blur-sm border border-alphagence-gold/40' 
-                  : 'bg-gradient-to-b from-red-900/30 to-red-800/10 backdrop-blur-sm border border-red-500/30'
-              }`}>
+              <div className="flex flex-col p-6 tracking-tight text-slate-100/90 w-[22rem] h-[28rem] bg-gradient-to-b from-alphagence-gold/20 to-alphagence-gold/5 backdrop-blur-sm border border-alphagence-gold/40 rounded-2xl">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`size-3 rounded-full animate-pulse ${
-                    hoveredCard === 'alphagence' || hoveredCard === null ? 'bg-alphagence-gold' : 'bg-red-500'
-                  }`} />
-                  <div className={`text-xs font-semibold ${
-                    hoveredCard === 'alphagence' || hoveredCard === null ? 'text-alphagence-gold' : 'text-red-300'
-                  }`}>
-                    {hoveredCard === 'alphagence' || hoveredCard === null ? 'Alphagence' : 'Agence Traditionnelle'}
-                  </div>
+                  <div className="size-3 rounded-full bg-alphagence-gold animate-pulse" />
+                  <div className="text-xs text-alphagence-gold font-semibold">Alphagence</div>
                 </div>
 
-                <div className={`text-2xl font-bold mb-6 ${
-                  hoveredCard === 'alphagence' || hoveredCard === null ? 'text-alphagence-gold' : 'text-red-200'
-                }`}>
-                  {hoveredCard === 'alphagence' || hoveredCard === null ? 'Innovation 3D Immersive' : 'Méthodes Archaïques'}
+                <div className="text-2xl font-bold text-alphagence-gold mb-6">
+                  Innovation 3D Immersive
                 </div>
                 
                 <div className="space-y-4 flex-1">
-                  {hoveredCard === 'alphagence' || hoveredCard === null ? (
-                    <>
-                      <div className="flex items-start gap-3">
-                        <Zap className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Livraison express</div>
-                          <div className="text-xs text-gray-300">2-4 semaines garanties</div>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <Zap className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-white">Livraison express</div>
+                      <div className="text-xs text-gray-300">2-4 semaines garanties</div>
+                    </div>
+                  </div>
 
-                      <div className="flex items-start gap-3">
-                        <Euro className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Prix transparent</div>
-                          <div className="text-xs text-gray-300">À partir de 99 CHF/mois tout inclus</div>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <Euro className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-white">Prix transparent</div>
+                      <div className="text-xs text-gray-300">À partir de 99 CHF/mois tout inclus</div>
+                    </div>
+                  </div>
 
-                      <div className="flex items-start gap-3">
-                        <Headphones className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Support 7j/7</div>
-                          <div className="text-xs text-gray-300">Réponse sous 24h garantie</div>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <Headphones className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-white">Support 7j/7</div>
+                      <div className="text-xs text-gray-300">Réponse sous 24h garantie</div>
+                    </div>
+                  </div>
 
-                      <div className="flex items-start gap-3">
-                        <Shield className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Technologie 3D de pointe</div>
-                          <div className="text-xs text-gray-300">Expériences immersives uniques</div>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <Shield className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-white">Technologie 3D de pointe</div>
+                      <div className="text-xs text-gray-300">Expériences immersives uniques</div>
+                    </div>
+                  </div>
 
-                      <div className="flex items-start gap-3">
-                        <Users className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Interface intuitive</div>
-                          <div className="text-xs text-gray-300">Modifications en temps réel</div>
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex items-start gap-3">
-                        <Clock className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Délais interminables</div>
-                          <div className="text-xs text-slate-400">3-6 mois de développement</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Euro className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Coûts cachés</div>
-                          <div className="text-xs text-slate-400">5 000€ - 20 000€ + maintenance</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Headphones className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Support limité</div>
-                          <div className="text-xs text-slate-400">Heures de bureau uniquement</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Shield className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Technologies obsolètes</div>
-                          <div className="text-xs text-slate-400">Sites lents et peu optimisés</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Users className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Communication difficile</div>
-                          <div className="text-xs text-slate-400">Modifications complexes</div>
-                        </div>
-                      </div>
-                    </>
-                  )}
+                  <div className="flex items-start gap-3">
+                    <Users className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-white">Interface intuitive</div>
+                      <div className="text-xs text-gray-300">Modifications en temps réel</div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className={`mt-4 p-3 rounded-lg border ${
-                  hoveredCard === 'alphagence' || hoveredCard === null 
-                    ? 'bg-alphagence-gold/20 border-alphagence-gold/40' 
-                    : 'bg-red-900/20 border-red-500/20'
-                }`}>
-                  <div className={`text-xs text-center font-semibold ${
-                    hoveredCard === 'alphagence' || hoveredCard === null ? 'text-alphagence-gold' : 'text-red-300'
-                  }`}>
-                    {hoveredCard === 'alphagence' || hoveredCard === null 
-                      ? '✨ Site 3D immersif qui convertit 3x plus' 
-                      : '❌ Résultat décevant pour un investissement élevé'
-                    }
+                <div className="mt-4 p-3 bg-alphagence-gold/20 rounded-lg border border-alphagence-gold/40">
+                  <div className="text-xs text-alphagence-gold text-center font-semibold">
+                    ✨ Site 3D immersif qui convertit 3x plus
                   </div>
                 </div>
               </div>
@@ -189,134 +118,63 @@ const ComparisonSection = () => {
           </div>
 
           {/* Agence Traditionnelle */}
-          <div 
-            className="animate-on-scroll"
-            onMouseEnter={() => setHoveredCard('traditional')}
-            onMouseLeave={() => setHoveredCard(null)}
-          >
+          <div className="animate-on-scroll">
             <PinContainer title="Méthodes obsolètes">
-              <div className={`flex flex-col p-6 tracking-tight text-slate-100/70 w-[22rem] h-[28rem] rounded-2xl transition-all duration-500 ${
-                hoveredCard === 'traditional' || hoveredCard === null 
-                  ? 'bg-gradient-to-b from-red-900/30 to-red-800/10 backdrop-blur-sm border border-red-500/30' 
-                  : 'bg-gradient-to-b from-alphagence-gold/20 to-alphagence-gold/5 backdrop-blur-sm border border-alphagence-gold/40'
-              }`}>
+              <div className="flex flex-col p-6 tracking-tight text-slate-100/70 w-[22rem] h-[28rem] bg-gradient-to-b from-red-900/30 to-red-800/10 backdrop-blur-sm border border-red-500/30 rounded-2xl">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`size-3 rounded-full animate-pulse ${
-                    hoveredCard === 'traditional' || hoveredCard === null ? 'bg-red-500' : 'bg-alphagence-gold'
-                  }`} />
-                  <div className={`text-xs font-semibold ${
-                    hoveredCard === 'traditional' || hoveredCard === null ? 'text-red-300' : 'text-alphagence-gold'
-                  }`}>
-                    {hoveredCard === 'traditional' || hoveredCard === null ? 'Agence Traditionnelle' : 'Alphagence'}
-                  </div>
+                  <div className="size-3 rounded-full bg-red-500 animate-pulse" />
+                  <div className="text-xs text-red-300">Agence Traditionnelle</div>
                 </div>
 
-                <div className={`text-2xl font-bold mb-6 ${
-                  hoveredCard === 'traditional' || hoveredCard === null ? 'text-red-200' : 'text-alphagence-gold'
-                }`}>
-                  {hoveredCard === 'traditional' || hoveredCard === null ? 'Méthodes Archaïques' : 'Innovation 3D Immersive'}
+                <div className="text-2xl font-bold text-red-200 mb-6">
+                  Méthodes Archaïques
                 </div>
                 
                 <div className="space-y-4 flex-1">
-                  {hoveredCard === 'traditional' || hoveredCard === null ? (
-                    <>
-                      <div className="flex items-start gap-3">
-                        <Clock className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Délais interminables</div>
-                          <div className="text-xs text-slate-400">3-6 mois de développement</div>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <Clock className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Délais interminables</div>
+                      <div className="text-xs text-slate-400">3-6 mois de développement</div>
+                    </div>
+                  </div>
 
-                      <div className="flex items-start gap-3">
-                        <Euro className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Coûts cachés</div>
-                          <div className="text-xs text-slate-400">5 000€ - 20 000€ + maintenance</div>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <Euro className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Coûts cachés</div>
+                      <div className="text-xs text-slate-400">5 000€ - 20 000€ + maintenance</div>
+                    </div>
+                  </div>
 
-                      <div className="flex items-start gap-3">
-                        <Headphones className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Support limité</div>
-                          <div className="text-xs text-slate-400">Heures de bureau uniquement</div>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <Headphones className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Support limité</div>
+                      <div className="text-xs text-slate-400">Heures de bureau uniquement</div>
+                    </div>
+                  </div>
 
-                      <div className="flex items-start gap-3">
-                        <Shield className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Technologies obsolètes</div>
-                          <div className="text-xs text-slate-400">Sites lents et peu optimisés</div>
-                        </div>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <Shield className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Technologies obsolètes</div>
+                      <div className="text-xs text-slate-400">Sites lents et peu optimisés</div>
+                    </div>
+                  </div>
 
-                      <div className="flex items-start gap-3">
-                        <Users className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-red-200">Communication difficile</div>
-                          <div className="text-xs text-slate-400">Modifications complexes</div>
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex items-start gap-3">
-                        <Zap className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Livraison express</div>
-                          <div className="text-xs text-gray-300">2-4 semaines garanties</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Euro className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Prix transparent</div>
-                          <div className="text-xs text-gray-300">À partir de 99 CHF/mois tout inclus</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Headphones className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Support 7j/7</div>
-                          <div className="text-xs text-gray-300">Réponse sous 24h garantie</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Shield className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Technologie 3D de pointe</div>
-                          <div className="text-xs text-gray-300">Expériences immersives uniques</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-3">
-                        <Users className="h-5 w-5 text-alphagence-gold mt-1 flex-shrink-0" />
-                        <div>
-                          <div className="text-sm font-medium text-white">Interface intuitive</div>
-                          <div className="text-xs text-gray-300">Modifications en temps réel</div>
-                        </div>
-                      </div>
-                    </>
-                  )}
+                  <div className="flex items-start gap-3">
+                    <Users className="h-5 w-5 text-red-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <div className="text-sm font-medium text-red-200">Communication difficile</div>
+                      <div className="text-xs text-slate-400">Modifications complexes</div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className={`mt-4 p-3 rounded-lg border ${
-                  hoveredCard === 'traditional' || hoveredCard === null 
-                    ? 'bg-red-900/20 border-red-500/20' 
-                    : 'bg-alphagence-gold/20 border-alphagence-gold/40'
-                }`}>
-                  <div className={`text-xs text-center font-semibold ${
-                    hoveredCard === 'traditional' || hoveredCard === null ? 'text-red-300' : 'text-alphagence-gold'
-                  }`}>
-                    {hoveredCard === 'traditional' || hoveredCard === null 
-                      ? '❌ Résultat décevant pour un investissement élevé' 
-                      : '✨ Site 3D immersif qui convertit 3x plus'
-                    }
+                <div className="mt-4 p-3 bg-red-900/20 rounded-lg border border-red-500/20">
+                  <div className="text-xs text-red-300 text-center">
+                    ❌ Résultat décevant pour un investissement élevé
                   </div>
                 </div>
               </div>

@@ -141,9 +141,9 @@ const SVGs = ({ beams, width, height, baseColor, accentColor, gradientColors }) 
 };
 
 const GradientColors = ({ colors = {
-  start: "#B08D57",
-  middle: "#8A6D42",
-  end: "#B08D57"
+  start: "#18CCFC",
+  middle: "#6344F5",
+  end: "#AE48FF"
 } }) => {
   return (
     <>
