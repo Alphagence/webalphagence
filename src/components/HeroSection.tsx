@@ -65,22 +65,11 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 btn-group">
-            <Button 
-              asChild 
-              className="animate-on-scroll bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-lg py-6 px-8"
-            >
-              <a href="https://www.alphagence.com" target="_blank" rel="noopener noreferrer">
-                Demander un devis gratuit
-              </a>
+            <Button className="animate-on-scroll bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-lg py-6 px-8">
+              Demander un devis gratuit
             </Button>
-            <Button 
-              asChild 
-              variant="outline" 
-              className="animate-on-scroll border-white text-white hover:bg-white/10 text-lg py-6 px-8"
-            >
-              <a href="https://www.alphagence.com" target="_blank" rel="noopener noreferrer">
-                Découvrir nos services
-              </a>
+            <Button variant="outline" className="animate-on-scroll border-white text-white hover:bg-white/10 text-lg py-6 px-8">
+              Découvrir nos services
             </Button>
           </div>
         </div>
