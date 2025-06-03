@@ -53,22 +53,22 @@ const HeroSection = () => {
         <div className="absolute top-[80%] left-0 w-full h-px bg-gradient-to-r from-transparent via-alphagence-gold/5 to-transparent"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
-        <div className="w-full max-w-4xl mx-auto text-center lg:text-left lg:mx-0">
-          <h1 className="animate-on-scroll text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            <span className="text-alphagence-gold block mb-2">Un site moderne</span> et performant,<br className="hidden sm:block" />
+      <div className="container mx-auto px-4 py-24 relative z-10">
+        <div className="max-w-3xl mx-auto md:mx-0">
+          <h1 className="animate-on-scroll text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <span className="text-alphagence-gold block mb-2">Un site moderne</span> et performant,<br />
             adapté aux besoins des <span className="text-alphagence-gold">PME</span>
           </h1>
           
-          <p className="animate-on-scroll text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-3xl mx-auto lg:mx-0">
+          <p className="animate-on-scroll text-lg md:text-xl text-white/80 mb-10">
             Faites passer votre entreprise à l'ère du numérique avec un site web professionnel qui attire et convertit vos visiteurs en clients fidèles.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 btn-group max-w-2xl mx-auto lg:mx-0">
-            <Button className="animate-on-scroll w-full sm:w-auto bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 font-semibold">
+          <div className="flex flex-col sm:flex-row gap-4 btn-group">
+            <Button className="animate-on-scroll bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-lg py-6 px-8">
               Demander un devis gratuit
             </Button>
-            <Button variant="outline" className="animate-on-scroll w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-black text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 font-semibold">
+            <Button variant="outline" className="animate-on-scroll border-white text-white hover:bg-white/10 text-lg py-6 px-8">
               Découvrir nos services
             </Button>
           </div>
@@ -76,8 +76,8 @@ const HeroSection = () => {
       </div>
       
       {/* Add floating cards in background */}
-      <div className="absolute -right-20 top-1/4 w-64 h-40 bg-white/5 rounded-lg transform rotate-12 blur-sm floating-slow hidden lg:block"></div>
-      <div className="absolute -left-10 bottom-1/4 w-48 h-32 bg-white/5 rounded-lg transform -rotate-6 blur-sm floating-slower hidden lg:block"></div>
+      <div className="absolute -right-20 top-1/4 w-64 h-40 bg-white/5 rounded-lg transform rotate-12 blur-sm floating-slow"></div>
+      <div className="absolute -left-10 bottom-1/4 w-48 h-32 bg-white/5 rounded-lg transform -rotate-6 blur-sm floating-slower"></div>
     </section>
   );
 };

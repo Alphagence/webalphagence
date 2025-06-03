@@ -45,43 +45,43 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-black/95 backdrop-blur-sm border-b border-gray-800' : 'bg-transparent'
     } ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <AlphagenceLogo className="h-6 w-6 sm:h-8 sm:w-8" />
-            <span className="text-lg sm:text-xl font-bold text-alphagence-gold">Alphagence</span>
+          <div className="flex items-center space-x-3">
+            <AlphagenceLogo className="h-8 w-8" />
+            <span className="text-xl font-bold text-alphagence-gold">Alphagence</span>
           </div>
 
           {/* Navigation desktop */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('benefits')}
-              className="text-white hover:text-alphagence-gold transition-colors text-sm lg:text-base"
+              className="text-white hover:text-alphagence-gold transition-colors"
             >
               Avantages
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="text-white hover:text-alphagence-gold transition-colors text-sm lg:text-base"
+              className="text-white hover:text-alphagence-gold transition-colors"
             >
               Portfolio
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-white hover:text-alphagence-gold transition-colors text-sm lg:text-base"
+              className="text-white hover:text-alphagence-gold transition-colors"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-white hover:text-alphagence-gold transition-colors text-sm lg:text-base"
+              className="text-white hover:text-alphagence-gold transition-colors"
             >
               Tarifs
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-alphagence-gold text-black px-4 lg:px-6 py-2 rounded-lg font-semibold hover:bg-alphagence-gold/90 transition-colors text-sm lg:text-base"
+              className="bg-alphagence-gold text-black px-6 py-2 rounded-lg font-semibold hover:bg-alphagence-gold/90 transition-colors"
             >
               Contact
             </button>
@@ -91,9 +91,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-alphagence-gold transition-colors p-1"
+              className="text-white hover:text-alphagence-gold transition-colors"
             >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -104,31 +104,31 @@ const Navbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <button
                 onClick={() => scrollToSection('benefits')}
-                className="block w-full text-left px-3 py-2 text-white hover:text-alphagence-gold transition-colors text-base"
+                className="block w-full text-left px-3 py-2 text-white hover:text-alphagence-gold transition-colors"
               >
                 Avantages
               </button>
               <button
                 onClick={() => scrollToSection('portfolio')}
-                className="block w-full text-left px-3 py-2 text-white hover:text-alphagence-gold transition-colors text-base"
+                className="block w-full text-left px-3 py-2 text-white hover:text-alphagence-gold transition-colors"
               >
                 Portfolio
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="block w-full text-left px-3 py-2 text-white hover:text-alphagence-gold transition-colors text-base"
+                className="block w-full text-left px-3 py-2 text-white hover:text-alphagence-gold transition-colors"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection('pricing')}
-                className="block w-full text-left px-3 py-2 text-white hover:text-alphagence-gold transition-colors text-base"
+                className="block w-full text-left px-3 py-2 text-white hover:text-alphagence-gold transition-colors"
               >
                 Tarifs
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="block w-full text-left px-3 py-2 bg-alphagence-gold text-black rounded-lg font-semibold mt-2 text-base"
+                className="block w-full text-left px-3 py-2 bg-alphagence-gold text-black rounded-lg font-semibold mt-2"
               >
                 Contact
               </button>
