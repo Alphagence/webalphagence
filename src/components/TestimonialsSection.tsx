@@ -51,19 +51,19 @@ const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section ref={sectionRef} className="bg-black text-white py-10 md:py-20">
-      <div className="container mx-auto px-2 md:px-4">
-        <div className="text-center mb-8 md:mb-16">
+    <section ref={sectionRef} className="bg-black text-white py-1 md:py-20">
+      <div className="container mx-auto px-1 md:px-4">
+        <div className="text-center mb-1 md:mb-16">
           <h2 className="section-heading inline-block mx-auto text-white">
             Ce Que Nos Clients Disent
           </h2>
-          <p className="text-base md:text-lg text-white/80 max-w-3xl mx-auto mt-4 md:mt-8 px-4">
+          <p className="text-base md:text-lg text-white/80 max-w-3xl mx-auto mt-1 md:mt-8 px-2">
             La satisfaction de nos clients est notre priorité. Voici quelques témoignages de ceux qui nous ont fait confiance.
           </p>
         </div>
 
         <ContainerScroll className="h-[300vh]">
-          <div className="sticky left-0 top-0 h-svh w-full py-6 md:py-12">
+          <div className="sticky left-0 top-0 h-svh w-full py-1 md:py-12">
             <CardsContainer className="mx-auto size-full h-[400px] md:h-[450px] w-[320px] md:w-[350px]">
               {TESTIMONIALS.map((testimonial, index) => (
                 <CardTransformed
