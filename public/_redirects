@@ -1,6 +1,6 @@
 
-# Redirections Netlify/Hostinger pour SPA
+# Netlify-style redirects for SPA routing
 /*    /index.html   200
 
-# Gestion des erreurs
-/404  /index.html   404
+# Handle API routes if needed
+/api/*  https://web.alphagence.com/api/:splat  200

@@ -1,14 +1,14 @@
 
-# Configuration Apache pour Alphagence
+# Enable URL rewriting for SPA
 Options -MultiViews
 RewriteEngine On
 
-# Redirection SPA pour React
+# Handle client-side routing
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
 
-# En-têtes de sécurité
+# Security headers
 <IfModule mod_headers.c>
     Header always set X-Frame-Options DENY
     Header always set X-Content-Type-Options nosniff
@@ -16,7 +16,7 @@ RewriteRule . /index.html [L]
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
-# Cache des ressources statiques
+# Cache static assets
 <IfModule mod_expires.c>
     ExpiresActive on
     ExpiresByType text/css "access plus 1 month"
@@ -48,7 +48,7 @@ RewriteRule . /index.html [L]
     AddOutputFilterByType DEFLATE application/json
 </IfModule>
 
-# Types MIME
+# MIME types
 <IfModule mod_mime.c>
     AddType application/javascript .js
     AddType text/css .css
