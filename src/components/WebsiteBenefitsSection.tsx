@@ -12,7 +12,8 @@ import {
   Shield,
   Search,
   Users,
-  BarChart3
+  BarChart3,
+  Target
 } from 'lucide-react';
 
 const WebsiteBenefitsSection = () => {
@@ -102,6 +103,11 @@ const WebsiteBenefitsSection = () => {
       title: "Communauté Engagée",
       description: "Créez une communauté fidèle autour de votre marque et développez l'engagement client.",
       icon: <Users className="w-6 h-6 text-alphagence-gold" />,
+    },
+    {
+      title: "Génération de Leads Qualifiés",
+      description: "Attirez et capturez automatiquement des prospects qualifiés grâce à des stratégies digitales ciblées.",
+      icon: <Target className="w-6 h-6 text-alphagence-gold" />,
     }
   ];
 

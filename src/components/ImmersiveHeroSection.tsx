@@ -31,15 +31,15 @@ const ImmersiveHeroSection = () => {
       scrollToExpand="Défiler pour découvrir"
       textBlend
     >
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-alphagence-gold">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-alphagence-gold text-center">
           Faites passer votre entreprise à l'ère numérique
         </h2>
-        <p className="text-lg md:text-xl text-gray-800 dark:text-gray-200 mb-10">
+        <p className="text-lg md:text-xl text-white mb-10 text-center">
           Un site web professionnel qui attire et convertit vos visiteurs en clients fidèles.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button className="bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-lg py-6 px-8">
             Demander un devis gratuit
           </Button>
