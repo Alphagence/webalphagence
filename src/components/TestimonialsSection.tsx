@@ -51,20 +51,20 @@ const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section ref={sectionRef} className="bg-black text-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+    <section ref={sectionRef} className="bg-black text-white py-1 md:py-20">
+      <div className="container mx-auto px-1 md:px-4">
+        <div className="text-center mb-1 md:mb-16">
           <h2 className="section-heading inline-block mx-auto text-white">
             Ce Que Nos Clients Disent
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto mt-8">
+          <p className="text-base md:text-lg text-white/80 max-w-3xl mx-auto mt-1 md:mt-8 px-2">
             La satisfaction de nos clients est notre priorité. Voici quelques témoignages de ceux qui nous ont fait confiance.
           </p>
         </div>
 
         <ContainerScroll className="h-[300vh]">
-          <div className="sticky left-0 top-0 h-svh w-full py-12">
-            <CardsContainer className="mx-auto size-full h-[450px] w-[350px]">
+          <div className="sticky left-0 top-0 h-svh w-full py-1 md:py-12">
+            <CardsContainer className="mx-auto size-full h-[400px] md:h-[450px] w-[320px] md:w-[350px]">
               {TESTIMONIALS.map((testimonial, index) => (
                 <CardTransformed
                   arrayLength={TESTIMONIALS.length}
@@ -80,12 +80,12 @@ const TestimonialsSection = () => {
                       className="text-alphagence-gold"
                       rating={testimonial.rating}
                     />
-                    <div className="mx-auto w-4/5 text-lg text-gray-700">
+                    <div className="mx-auto w-4/5 text-sm md:text-lg text-gray-700">
                       <blockquote cite="#" className="italic">"{testimonial.quote}"</blockquote>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <Avatar className="!size-12 border border-stone-300">
+                    <Avatar className="!size-10 md:!size-12 border border-stone-300">
                       <AvatarImage
                         src={testimonial.avatarUrl}
                         alt={`Portrait of ${testimonial.name}`}
@@ -98,10 +98,10 @@ const TestimonialsSection = () => {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <span className="block text-lg font-semibold tracking-tight md:text-xl text-alphagence-black">
+                      <span className="block text-base md:text-lg font-semibold tracking-tight text-alphagence-black">
                         {testimonial.name}
                       </span>
-                      <span className="block text-sm text-gray-500">
+                      <span className="block text-xs md:text-sm text-gray-500">
                         {testimonial.position}, {testimonial.company}
                       </span>
                     </div>
