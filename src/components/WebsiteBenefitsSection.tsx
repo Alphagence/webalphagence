@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { BentoGrid, type BentoItem } from './ui/bento-grid';
+import { CardSpotlight } from '@/components/ui/card-spotlight';
 import {
   Globe,
   Clock,
@@ -10,7 +10,9 @@ import {
   Video,
   Zap,
   Shield,
-  Search
+  Search,
+  Users,
+  BarChart3
 } from 'lucide-react';
 
 const WebsiteBenefitsSection = () => {
@@ -45,97 +47,61 @@ const WebsiteBenefitsSection = () => {
     };
   }, []);
 
-  const websiteBenefits: BentoItem[] = [
+  const websiteBenefits = [
     {
       title: "Visibilité 24/7",
-      meta: "365 jours/an",
       description: "Votre entreprise est accessible à tout moment, offrant une vitrine permanente pour vos produits et services.",
-      icon: <Clock className="w-4 h-4 text-alphagence-gold" />,
-      status: "Essentiel",
-      tags: ["Accessibilité", "Présence"],
-      colSpan: 1,
-      hasPersistentHover: true,
-      cta: "Découvrir →"
+      icon: <Clock className="w-6 h-6 text-alphagence-gold" />,
     },
     {
       title: "Portée Mondiale",
-      meta: "Sans limites",
       description: "Touchez des clients partout dans le monde et élargissez votre marché au-delà des frontières géographiques.",
-      icon: <Globe className="w-4 h-4 text-gray-600" />,
-      status: "Global",
-      tags: ["International", "Expansion"],
-      colSpan: 1,
-      cta: "Explorer →"
+      icon: <Globe className="w-6 h-6 text-alphagence-gold" />,
     },
     {
       title: "Croissance Business",
-      meta: "+300% en moyenne",
       description: "Augmentez significativement vos ventes grâce à une présence digitale optimisée et professionnelle.",
-      icon: <TrendingUp className="w-4 h-4 text-green-500" />,
-      status: "ROI Prouvé",
-      tags: ["Ventes", "Conversion"],
-      colSpan: 1,
-      cta: "Analyser →"
+      icon: <TrendingUp className="w-6 h-6 text-alphagence-gold" />,
     },
     {
       title: "Crédibilité Professionnelle",
-      meta: "85% des clients",
       description: "Renforcez la confiance de vos clients avec un site web professionnel qui reflète votre expertise.",
-      icon: <CheckCircle className="w-4 h-4 text-purple-500" />,
-      status: "Confiance",
-      tags: ["Réputation", "Trust"],
-      colSpan: 1,
-      cta: "Voir plus →"
+      icon: <CheckCircle className="w-6 h-6 text-alphagence-gold" />,
     },
     {
       title: "Marketing Automatisé",
-      meta: "24h/24",
       description: "Votre site travaille pour vous en permanence, générant des leads et convertissant les visiteurs.",
-      icon: <Star className="w-4 h-4 text-yellow-500" />,
-      status: "Automation",
-      tags: ["Leads", "Marketing"],
-      colSpan: 1,
-      cta: "Optimiser →"
+      icon: <Star className="w-6 h-6 text-alphagence-gold" />,
     },
     {
       title: "Contenu Multimédia",
-      meta: "Engagement +200%",
       description: "Présentez vos produits avec des vidéos, images et animations pour captiver votre audience.",
-      icon: <Video className="w-4 h-4 text-red-500" />,
-      status: "Interactif",
-      tags: ["Média", "Engagement"],
-      colSpan: 1,
-      cta: "Créer →"
+      icon: <Video className="w-6 h-6 text-alphagence-gold" />,
     },
     {
       title: "Automatisation IA",
-      meta: "-70% temps employé",
-      description: "Intégrez des agents IA pour automatiser les tâches répétitives, réduire les coûts et augmenter l'efficacité de votre équipe.",
-      icon: <Zap className="w-4 h-4 text-alphagence-gold" />,
-      status: "Innovation",
-      tags: ["IA", "Automatisation", "Efficacité"],
-      colSpan: 1,
-      cta: "Découvrir l'IA →"
+      description: "Intégrez des agents IA pour automatiser les tâches répétitives et augmenter l'efficacité.",
+      icon: <Zap className="w-6 h-6 text-alphagence-gold" />,
     },
     {
       title: "Sécurité Renforcée",
-      meta: "Protection SSL",
-      description: "Protégez vos données et celles de vos clients avec nos mesures de sécurité avancées et certifications SSL.",
-      icon: <Shield className="w-4 h-4 text-gray-600" />,
-      status: "Sécurisé",
-      tags: ["SSL", "Protection"],
-      colSpan: 1,
-      cta: "Sécuriser →"
+      description: "Protégez vos données et celles de vos clients avec nos mesures de sécurité avancées.",
+      icon: <Shield className="w-6 h-6 text-alphagence-gold" />,
     },
     {
       title: "Référencement SEO",
-      meta: "Première page Google",
       description: "Optimisez votre visibilité sur les moteurs de recherche et attirez plus de clients qualifiés.",
-      icon: <Search className="w-4 h-4 text-gray-600" />,
-      status: "Visibilité",
-      tags: ["SEO", "Google"],
-      colSpan: 1,
-      cta: "Optimiser →"
+      icon: <Search className="w-6 h-6 text-alphagence-gold" />,
+    },
+    {
+      title: "Analytics Avancés",
+      description: "Suivez et analysez les performances de votre site pour optimiser continuellement vos résultats.",
+      icon: <BarChart3 className="w-6 h-6 text-alphagence-gold" />,
+    },
+    {
+      title: "Communauté Engagée",
+      description: "Créez une communauté fidèle autour de votre marque et développez l'engagement client.",
+      icon: <Users className="w-6 h-6 text-alphagence-gold" />,
     }
   ];
 
@@ -155,45 +121,19 @@ const WebsiteBenefitsSection = () => {
         <div className="animate-on-scroll">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {websiteBenefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="group relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-200"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
+              <CardSpotlight key={index} className="h-full">
+                <div className="relative z-10">
+                  <div className="flex items-center gap-3 mb-4">
                     {benefit.icon}
-                    <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
-                      {benefit.status}
-                    </span>
+                    <h3 className="text-xl font-bold text-alphagence-gold">
+                      {benefit.title}
+                    </h3>
                   </div>
-                  <span className="text-xs text-gray-500 font-medium">
-                    {benefit.meta}
-                  </span>
+                  <p className="text-gray-300 leading-relaxed">
+                    {benefit.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
-                  {benefit.title}
-                </h3>
-                
-                <p className="text-gray-600 text-sm mb-4">
-                  {benefit.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {benefit.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="text-xs bg-gray-50 text-gray-500 px-2 py-1 rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                
-                <button className="text-alphagence-gold text-sm font-medium hover:text-alphagence-gold/80 transition-colors">
-                  {benefit.cta}
-                </button>
-              </div>
+              </CardSpotlight>
             ))}
           </div>
         </div>
@@ -201,7 +141,7 @@ const WebsiteBenefitsSection = () => {
         <div className="animate-on-scroll text-center mt-12">
           <p className="text-lg mb-6 text-white">Prêt à transformer votre présence digitale?</p>
           <a 
-            href="#contact" 
+            href="#calendly-booking" 
             className="inline-flex items-center px-8 py-3 bg-alphagence-gold text-black font-semibold rounded-lg hover:bg-alphagence-gold/90 transition-colors"
           >
             Commencer mon projet
