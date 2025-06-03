@@ -1,9 +1,15 @@
 
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
-import { scrollToContact } from '@/utils/scrollToContact';
 
 const PricingSection = () => {
+  const scrollToCalendly = () => {
+    const calendlySection = document.getElementById('calendly-booking');
+    if (calendlySection) {
+      calendlySection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const pricingPlans = [
     {
       name: "Essentiel",
@@ -55,7 +61,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-gray-800">
+    <section id="pricing" className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
@@ -103,7 +109,7 @@ const PricingSection = () => {
                 </ul>
 
                 <button
-                  onClick={scrollToContact}
+                  onClick={scrollToCalendly}
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
                     plan.isPopular
                       ? "bg-alphagence-gold text-black hover:bg-alphagence-gold/90"
@@ -125,7 +131,7 @@ const PricingSection = () => {
               Contactez-nous pour discuter de vos besoins et découvrir nos possibilités d'intégration 3D avancées.
             </p>
             <button 
-              onClick={scrollToContact}
+              onClick={scrollToCalendly}
               className="bg-alphagence-gold hover:bg-alphagence-gold/90 text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
             >
               Demander un devis personnalisé

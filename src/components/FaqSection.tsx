@@ -1,7 +1,6 @@
 
 import { useEffect, useRef } from 'react';
 import { FaqAccordion } from './ui/faq-chat-accordion';
-import { scrollToContact } from '@/utils/scrollToContact';
 
 const FaqSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -105,7 +104,7 @@ const FaqSection = () => {
   ];
 
   return (
-    <section id="faq" ref={sectionRef} className="py-20 bg-gray-800">
+    <section id="faq" ref={sectionRef} className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
@@ -126,8 +125,8 @@ const FaqSection = () => {
 
         <div className="animate-on-scroll text-center mt-12">
           <p className="text-lg mb-4 text-white">Vous ne trouvez pas la réponse à votre question?</p>
-          <button 
-            onClick={scrollToContact}
+          <a 
+            href="#contact" 
             className="text-alphagence-gold hover:underline font-semibold inline-flex items-center"
           >
             Contactez-nous directement
@@ -140,7 +139,7 @@ const FaqSection = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </section>
