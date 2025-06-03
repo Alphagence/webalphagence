@@ -27,10 +27,11 @@ const Index = () => {
     document.body.appendChild(script);
     
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    const handleAnchorClick = (e: Event) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
+        const targetId = target.getAttribute('href');
         if (!targetId || targetId === '#') return;
         
         const targetElement = document.querySelector(targetId);
@@ -40,16 +41,16 @@ const Index = () => {
             behavior: 'smooth'
           });
         }
-      });
-    });
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
     
     // Add page reveal animation
     document.body.classList.add('page-loaded');
     
     return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', () => {});
-      });
+      document.removeEventListener('click', handleAnchorClick);
     };
   }, []);
 
