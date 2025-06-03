@@ -55,10 +55,10 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white w-full overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
       <ImmersiveHeroSection />
-      <div className="bg-black w-full">
+      <div className="bg-black">
         <WebsiteBenefitsSection />
         <PortfolioSection />
         <TestimonialsSection />
