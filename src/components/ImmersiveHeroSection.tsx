@@ -31,25 +31,25 @@ const ImmersiveHeroSection = () => {
       scrollToExpand="Défiler pour découvrir"
       textBlend
     >
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-alphagence-gold text-center">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-alphagence-gold text-center leading-tight">
           Faites passer votre entreprise à l'ère numérique
         </h2>
-        <p className="text-lg md:text-xl text-white mb-10 text-center">
+        <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 md:mb-10 text-center px-2 leading-relaxed">
           Un site web professionnel qui attire et convertit vos visiteurs en clients fidèles.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-lg py-6 px-8">
+        <div className="flex flex-col gap-3 sm:gap-4 w-full max-w-2xl mx-auto px-2">
+          <Button className="w-full bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 font-semibold">
             Demander un devis gratuit
           </Button>
-          <Button variant="outline" className="border-alphagence-gold text-alphagence-gold hover:bg-alphagence-gold/10 text-lg py-6 px-8">
+          <Button variant="outline" className="w-full border-2 border-alphagence-gold text-alphagence-gold hover:bg-alphagence-gold hover:text-black text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 font-semibold">
             Découvrir nos services
           </Button>
           <Button 
             asChild
             variant="outline" 
-            className="border-alphagence-gold text-alphagence-gold hover:bg-alphagence-gold/10 text-lg py-6 px-8"
+            className="w-full border-2 border-alphagence-gold text-alphagence-gold hover:bg-alphagence-gold hover:text-black text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 font-semibold"
           >
             <a href="https://www.alphagence.com" target="_blank" rel="noopener noreferrer">
               Consulter toutes nos offres et prix
