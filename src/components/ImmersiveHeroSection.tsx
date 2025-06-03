@@ -46,6 +46,15 @@ const ImmersiveHeroSection = () => {
           <Button variant="outline" className="border-alphagence-gold text-alphagence-gold hover:bg-alphagence-gold/10 text-lg py-6 px-8">
             Découvrir nos services
           </Button>
+          <Button 
+            asChild
+            variant="outline" 
+            className="border-white text-white hover:bg-white/10 text-lg py-6 px-8"
+          >
+            <a href="https://www.alphagence.com" target="_blank" rel="noopener noreferrer">
+              Consulter toutes nos offres et prix
+            </a>
+          </Button>
         </div>
       </div>
     </ScrollExpandMedia>

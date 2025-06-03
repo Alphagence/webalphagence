@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { PulseBeams } from '@/components/ui/pulse-beams';
+import { Button } from "@/components/ui/button";
 
 const CtaSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -228,6 +229,16 @@ const CtaSection = () => {
               </svg>
               info@alphagence.com
             </a>
+
+            <Button 
+              asChild
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10 font-bold px-8 py-4"
+            >
+              <a href="https://www.alphagence.com" target="_blank" rel="noopener noreferrer">
+                Consulter toutes nos offres et prix
+              </a>
+            </Button>
           </div>
 
           <div className="animate-on-scroll mb-8 text-center">
