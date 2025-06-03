@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import AlphagenceLogo from "@/assets/logo";
+import { scrollToContact } from '@/utils/scrollToContact';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,7 +81,7 @@ const Navbar = () => {
               Tarifs
             </button>
             <button
-              onClick={() => scrollToSection('contact')}
+              onClick={scrollToContact}
               className="bg-alphagence-gold text-black px-6 py-2 rounded-lg font-semibold hover:bg-alphagence-gold/90 transition-colors"
             >
               Contact
@@ -127,7 +128,7 @@ const Navbar = () => {
                 Tarifs
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={scrollToContact}
                 className="block w-full text-left px-3 py-2 bg-alphagence-gold text-black rounded-lg font-semibold mt-2"
               >
                 Contact

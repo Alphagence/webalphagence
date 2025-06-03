@@ -3,13 +3,13 @@ import { useEffect } from 'react';
 import Navbar from "@/components/Navbar";
 import ImmersiveHeroSection from "@/components/ImmersiveHeroSection";
 import WebsiteBenefitsSection from "@/components/WebsiteBenefitsSection";
+import DigitalEssentialsSection from "@/components/DigitalEssentialsSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesSection from "@/components/ServicesSection";
 import ProcessSection from "@/components/ProcessSection";
 import PricingSection from "@/components/PricingSection";
 import ComparisonSection from "@/components/ComparisonSection";
-import PartnersSection from "@/components/PartnersSection";
 import FaqSection from "@/components/FaqSection";
 import StatsSection from "@/components/StatsSection";
 import CtaSection from "@/components/CtaSection";
@@ -60,13 +60,13 @@ const Index = () => {
       <ImmersiveHeroSection />
       <div className="bg-black">
         <WebsiteBenefitsSection />
+        <DigitalEssentialsSection />
         <PortfolioSection />
         <TestimonialsSection />
         <ServicesSection />
         <ProcessSection />
         <PricingSection />
         <ComparisonSection />
-        <PartnersSection />
         <StatsSection />
         <FaqSection />
         <CtaSection />

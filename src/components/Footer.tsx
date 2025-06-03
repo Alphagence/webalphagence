@@ -1,9 +1,10 @@
 
 import AlphagenceLogo from "@/assets/logo";
+import { scrollToContact } from '@/utils/scrollToContact';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="bg-gray-800 text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo et description */}
@@ -27,11 +28,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-alphagence-gold">Services</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#services" className="hover:text-alphagence-gold transition-colors">Sites Web 3D</a></li>
-              <li><a href="#services" className="hover:text-alphagence-gold transition-colors">E-commerce</a></li>
-              <li><a href="#services" className="hover:text-alphagence-gold transition-colors">Applications Web</a></li>
-              <li><a href="#services" className="hover:text-alphagence-gold transition-colors">Maintenance</a></li>
-              <li><a href="#services" className="hover:text-alphagence-gold transition-colors">SEO</a></li>
+              <li><button onClick={scrollToContact} className="hover:text-alphagence-gold transition-colors">Sites Web 3D</button></li>
+              <li><button onClick={scrollToContact} className="hover:text-alphagence-gold transition-colors">E-commerce</button></li>
+              <li><button onClick={scrollToContact} className="hover:text-alphagence-gold transition-colors">Applications Web</button></li>
+              <li><button onClick={scrollToContact} className="hover:text-alphagence-gold transition-colors">Maintenance</button></li>
+              <li><button onClick={scrollToContact} className="hover:text-alphagence-gold transition-colors">SEO</button></li>
             </ul>
           </div>
 
@@ -39,11 +40,20 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-alphagence-gold">Liens rapides</h4>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#about" className="hover:text-alphagence-gold transition-colors">À propos</a></li>
-              <li><a href="#portfolio" className="hover:text-alphagence-gold transition-colors">Portfolio</a></li>
-              <li><a href="#pricing" className="hover:text-alphagence-gold transition-colors">Tarifs</a></li>
-              <li><a href="#contact" className="hover:text-alphagence-gold transition-colors">Contact</a></li>
-              <li><a href="#faq" className="hover:text-alphagence-gold transition-colors">FAQ</a></li>
+              <li><button onClick={scrollToContact} className="hover:text-alphagence-gold transition-colors">À propos</button></li>
+              <li><button onClick={() => {
+                const element = document.getElementById('portfolio');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }} className="hover:text-alphagence-gold transition-colors">Portfolio</button></li>
+              <li><button onClick={() => {
+                const element = document.getElementById('pricing');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }} className="hover:text-alphagence-gold transition-colors">Tarifs</button></li>
+              <li><button onClick={scrollToContact} className="hover:text-alphagence-gold transition-colors">Contact</button></li>
+              <li><button onClick={() => {
+                const element = document.getElementById('faq');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }} className="hover:text-alphagence-gold transition-colors">FAQ</button></li>
             </ul>
           </div>
         </div>
