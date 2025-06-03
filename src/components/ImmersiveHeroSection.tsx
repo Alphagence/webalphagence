@@ -24,8 +24,8 @@ const ImmersiveHeroSection = () => {
   return (
     <ScrollExpandMedia
       mediaType="video"
-      mediaSrc="/2025-05-20-15_44_19.mp4"
-      bgImageSrc="/lovable-uploads/fb79ecdd-06c0-45df-9f81-e2f90615b669.png"
+      mediaSrc="/assets/hero-video.mp4"
+      bgImageSrc="/assets/hero-bg.png"
       title="Un site moderne et performant"
       date="Adapté aux besoins des PME"
       scrollToExpand="Défiler pour découvrir"
