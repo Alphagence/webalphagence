@@ -12,8 +12,7 @@ import {
   Shield,
   Search,
   Users,
-  BarChart3,
-  Target
+  BarChart3
 } from 'lucide-react';
 
 const WebsiteBenefitsSection = () => {
@@ -103,11 +102,6 @@ const WebsiteBenefitsSection = () => {
       title: "Communauté Engagée",
       description: "Créez une communauté fidèle autour de votre marque et développez l'engagement client.",
       icon: <Users className="w-6 h-6 text-alphagence-gold" />,
-    },
-    {
-      title: "Génération de Leads Qualifiés",
-      description: "Attirez et convertissez des prospects de qualité grâce à des formulaires optimisés et des CTA stratégiques.",
-      icon: <Target className="w-6 h-6 text-alphagence-gold" />,
     }
   ];
 
@@ -116,7 +110,7 @@ const WebsiteBenefitsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">
-            Transformez Votre Présence Digitale Dès Aujourd'hui
+            Pourquoi Avoir Un Site Web?
           </h2>
           <p className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto mt-8">
             Découvrez tous les avantages d'une présence digitale professionnelle pour votre entreprise.

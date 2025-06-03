@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import Navbar from "@/components/Navbar";
-import UpdatedHeroSection from "@/components/UpdatedHeroSection";
+import ImmersiveHeroSection from "@/components/ImmersiveHeroSection";
 import WebsiteBenefitsSection from "@/components/WebsiteBenefitsSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -56,7 +56,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <UpdatedHeroSection />
+      <ImmersiveHeroSection />
       <div className="bg-black">
         <WebsiteBenefitsSection />
         <PortfolioSection />
