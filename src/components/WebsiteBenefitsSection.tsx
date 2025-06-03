@@ -53,7 +53,7 @@ const WebsiteBenefitsSection = () => {
       icon: <Clock className="w-4 h-4 text-alphagence-gold" />,
       status: "Essentiel",
       tags: ["Accessibilité", "Présence"],
-      colSpan: 2,
+      colSpan: 1,
       hasPersistentHover: true,
       cta: "Découvrir →"
     },
@@ -64,6 +64,7 @@ const WebsiteBenefitsSection = () => {
       icon: <Globe className="w-4 h-4 text-gray-600" />,
       status: "Global",
       tags: ["International", "Expansion"],
+      colSpan: 1,
       cta: "Explorer →"
     },
     {
@@ -73,7 +74,7 @@ const WebsiteBenefitsSection = () => {
       icon: <TrendingUp className="w-4 h-4 text-green-500" />,
       status: "ROI Prouvé",
       tags: ["Ventes", "Conversion"],
-      colSpan: 2,
+      colSpan: 1,
       cta: "Analyser →"
     },
     {
@@ -83,6 +84,7 @@ const WebsiteBenefitsSection = () => {
       icon: <CheckCircle className="w-4 h-4 text-purple-500" />,
       status: "Confiance",
       tags: ["Réputation", "Trust"],
+      colSpan: 1,
       cta: "Voir plus →"
     },
     {
@@ -92,6 +94,7 @@ const WebsiteBenefitsSection = () => {
       icon: <Star className="w-4 h-4 text-yellow-500" />,
       status: "Automation",
       tags: ["Leads", "Marketing"],
+      colSpan: 1,
       cta: "Optimiser →"
     },
     {
@@ -101,6 +104,7 @@ const WebsiteBenefitsSection = () => {
       icon: <Video className="w-4 h-4 text-red-500" />,
       status: "Interactif",
       tags: ["Média", "Engagement"],
+      colSpan: 1,
       cta: "Créer →"
     },
     {
@@ -110,7 +114,7 @@ const WebsiteBenefitsSection = () => {
       icon: <Zap className="w-4 h-4 text-alphagence-gold" />,
       status: "Innovation",
       tags: ["IA", "Automatisation", "Efficacité"],
-      colSpan: 2,
+      colSpan: 1,
       cta: "Découvrir l'IA →"
     },
     {
@@ -120,6 +124,7 @@ const WebsiteBenefitsSection = () => {
       icon: <Shield className="w-4 h-4 text-gray-600" />,
       status: "Sécurisé",
       tags: ["SSL", "Protection"],
+      colSpan: 1,
       cta: "Sécuriser →"
     },
     {
@@ -129,6 +134,7 @@ const WebsiteBenefitsSection = () => {
       icon: <Search className="w-4 h-4 text-gray-600" />,
       status: "Visibilité",
       tags: ["SEO", "Google"],
+      colSpan: 1,
       cta: "Optimiser →"
     }
   ];
@@ -147,7 +153,49 @@ const WebsiteBenefitsSection = () => {
         </div>
 
         <div className="animate-on-scroll">
-          <BentoGrid items={websiteBenefits} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {websiteBenefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="group relative bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-gray-200"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    {benefit.icon}
+                    <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                      {benefit.status}
+                    </span>
+                  </div>
+                  <span className="text-xs text-gray-500 font-medium">
+                    {benefit.meta}
+                  </span>
+                </div>
+                
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {benefit.title}
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-4">
+                  {benefit.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-1 mb-4">
+                  {benefit.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="text-xs bg-gray-50 text-gray-500 px-2 py-1 rounded"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                
+                <button className="text-alphagence-gold text-sm font-medium hover:text-alphagence-gold/80 transition-colors">
+                  {benefit.cta}
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="animate-on-scroll text-center mt-12">

@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section ref={sectionRef} className="bg-alphagence-black text-white py-20">
+    <section ref={sectionRef} className="bg-black text-white py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-heading inline-block mx-auto text-white">

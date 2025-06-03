@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import DotCard from '@/components/ui/moving-dot-card';
+import AnimatedCounter from '@/components/ui/animated-counter';
 
 const StatsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -56,13 +56,17 @@ const StatsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
           {stats.map((stat, index) => (
-            <div key={index} className="animate-on-scroll flex justify-center">
-              <DotCard 
-                target={stat.target} 
-                label={stat.label}
-                suffix={stat.suffix}
-                duration={2000 + index * 200}
-              />
+            <div key={index} className="animate-on-scroll text-center bg-gray-900 p-6 rounded-xl border border-gray-700">
+              <div className="text-4xl font-bold text-alphagence-gold mb-2">
+                <AnimatedCounter 
+                  target={stat.target} 
+                  suffix={stat.suffix}
+                  duration={2000 + index * 200}
+                />
+              </div>
+              <div className="text-gray-300 font-medium">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>
