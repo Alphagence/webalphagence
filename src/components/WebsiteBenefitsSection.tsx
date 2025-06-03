@@ -81,10 +81,7 @@ const WebsiteBenefitsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="animate-on-scroll section-heading inline-block mx-auto text-white">Un Site Web 2.0 ?</h2>
-          <p className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto mt-8">
-            Découvrez tous les avantages d'une présence digitale professionnelle pour votre entreprise.
-            Un site web n'est plus un luxe, c'est une nécessité dans le monde moderne.
-          </p>
+          <p className="animate-on-scroll text-lg text-gray-300 max-w-3xl mx-auto mt-8">Découvrez tous les avantages d'une présence digitale professionnelle pour votre entreprise. Un site web PRO n'est plus un luxe, c'est une nécessité dans le monde moderne.</p>
         </div>
 
         <div className="animate-on-scroll">
