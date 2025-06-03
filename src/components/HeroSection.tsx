@@ -53,22 +53,22 @@ const HeroSection = () => {
         <div className="absolute top-[80%] left-0 w-full h-px bg-gradient-to-r from-transparent via-alphagence-gold/5 to-transparent"></div>
       </div>
       
-      <div className="container mx-auto px-4 py-24 relative z-10">
-        <div className="max-w-3xl mx-auto md:mx-0">
-          <h1 className="animate-on-scroll text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+      <div className="w-full px-4 md:px-6 lg:px-8 py-24 relative z-10">
+        <div className="max-w-3xl mx-auto md:mx-0 md:ml-8 lg:ml-16">
+          <h1 className="animate-on-scroll text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 text-center md:text-left">
             <span className="text-alphagence-gold block mb-2">Un site moderne</span> et performant,<br />
             adapté aux besoins des <span className="text-alphagence-gold">PME</span>
           </h1>
           
-          <p className="animate-on-scroll text-lg md:text-xl text-white/80 mb-10">
+          <p className="animate-on-scroll text-base md:text-lg lg:text-xl text-white/80 mb-8 md:mb-10 text-center md:text-left">
             Faites passer votre entreprise à l'ère du numérique avec un site web professionnel qui attire et convertit vos visiteurs en clients fidèles.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 btn-group">
-            <Button className="animate-on-scroll bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-lg py-6 px-8">
+          <div className="flex flex-col md:flex-row gap-3 md:gap-4 btn-group items-center md:items-start">
+            <Button className="animate-on-scroll w-full md:w-auto bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-base md:text-lg py-4 md:py-6 px-6 md:px-8">
               Demander un devis gratuit
             </Button>
-            <Button variant="outline" className="animate-on-scroll border-white text-white hover:bg-white/10 text-lg py-6 px-8">
+            <Button variant="outline" className="animate-on-scroll w-full md:w-auto border-white text-white hover:bg-white/10 text-base md:text-lg py-4 md:py-6 px-6 md:px-8">
               Découvrir nos services
             </Button>
           </div>
