@@ -14,7 +14,6 @@ import {
   Users,
   BarChart3
 } from 'lucide-react';
-import { scrollToContact } from '@/utils/scrollToContact';
 
 const WebsiteBenefitsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -141,8 +140,8 @@ const WebsiteBenefitsSection = () => {
 
         <div className="animate-on-scroll text-center mt-12">
           <p className="text-lg mb-6 text-white">Prêt à transformer votre présence digitale?</p>
-          <button 
-            onClick={scrollToContact}
+          <a 
+            href="#calendly-booking" 
             className="inline-flex items-center px-8 py-3 bg-alphagence-gold text-black font-semibold rounded-lg hover:bg-alphagence-gold/90 transition-colors"
           >
             Commencer mon projet
@@ -155,7 +154,7 @@ const WebsiteBenefitsSection = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
-          </button>
+          </a>
         </div>
       </div>
     </section>
