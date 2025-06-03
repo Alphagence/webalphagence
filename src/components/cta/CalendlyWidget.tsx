@@ -1,5 +1,5 @@
 const CalendlyWidget = () => {
-  return <div className="animate-on-scroll rounded-xl p-6 backdrop-blur-sm border border-gray-700 bg-[#b08d57]/[0.26]">
+  return <div className="animate-on-scroll rounded-xl p-6 backdrop-blur-sm border border-gray-700 bg-[#b08d57]/0">
       <h3 className="text-2xl font-bold text-alphagence-gold mb-4">Réservez votre consultation gratuite</h3>
       <p className="text-gray-300 mb-6">
         Discutons de votre projet et découvrez comment nous pouvons transformer votre présence digitale.
