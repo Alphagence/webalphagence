@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
@@ -39,11 +40,19 @@ const ImmersiveHeroSection = () => {
           <div className="flex flex-col gap-3 sm:gap-4 items-center justify-center w-full">
             <Button 
               asChild 
+              className="bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 w-full max-w-xs sm:max-w-none sm:w-auto"
+            >
+              <a href="https://www.alphagence.com" target="_blank" rel="noopener noreferrer">
+                Commencer mon projet
+              </a>
+            </Button>
+            <Button 
+              asChild 
               variant="outline" 
               className="border-alphagence-gold text-alphagence-gold hover:bg-alphagence-gold/10 text-base sm:text-lg py-4 sm:py-6 px-6 sm:px-8 w-full max-w-xs sm:max-w-none sm:w-auto"
             >
               <a href="https://www.alphagence.com" target="_blank" rel="noopener noreferrer">
-                Consulter toutes nos offres
+                Découvrir nos services
               </a>
             </Button>
           </div>

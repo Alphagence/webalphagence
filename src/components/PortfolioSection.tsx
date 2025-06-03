@@ -29,8 +29,13 @@ const PortfolioSection = () => {
         <PortfolioGallery />
 
         <div className="text-center pt-12">
-          <Button className="bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-base py-5 px-6">
-            Voir tous nos projets
+          <Button 
+            asChild 
+            className="bg-alphagence-gold hover:bg-alphagence-gold/90 text-black text-base py-5 px-6"
+          >
+            <a href="https://www.alphagence.com" target="_blank" rel="noopener noreferrer">
+              Voir tous nos projets
+            </a>
           </Button>
         </div>
       </div>
