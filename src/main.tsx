@@ -15,5 +15,5 @@ try {
 } catch (error) {
   console.error('Failed to render app:', error);
   // Fallback content
-  rootElement.innerHTML = '<div style="padding: 20px; font-family: Arial, sans-serif;"><h1>Chargement...</h1><p>Veuillez patienter pendant le chargement de la page.</p></div>';
+  rootElement.innerHTML = '<div style="padding: 20px; font-family: Arial, sans-serif; text-align: center;"><h1>Chargement en cours...</h1><p>Veuillez patienter pendant le chargement de la page.</p></div>';
 }
